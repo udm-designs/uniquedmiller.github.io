@@ -393,7 +393,15 @@ nav a {
   color: #FAFAFA;
 }
 
+#projects {
+  position: relative;
+  border-bottom: 10px solid #00C9FF;
+}
+
 #projects #p-menu {
+  position: sticky;
+  top: 0px;
+  z-index: 2;
   background-color: #FFEA00;
 }
 #projects #p-menu ul {
@@ -504,6 +512,16 @@ nav a {
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
   mix-blend-mode: color;
+}
+#projects .card:last-child .cblock::after {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, rgba(0, 201, 255, 0.3333333333)), to(#00C9FF));
+  background: linear-gradient(to bottom, rgba(0, 201, 255, 0.3333333333) 20%, #00C9FF 100%);
+  mix-blend-mode: normal;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
 }
 
 #about {

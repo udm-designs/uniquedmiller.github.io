@@ -13,31 +13,3 @@ $(document).ready(function() {
     $('#' + id + 'p').addClass('active');
   });
 });
-// // navigation
-// let ub = document.querySelector('#uxbtn');
-// let eb = document.querySelector('#edbtn');
-// let ab = document.querySelector('#pabtn');
-// let uxp = document.querySelector('#uxp');
-// let edp = document.querySelector('#edp');
-// let pap = document.querySelector('#pap');
-// let listbtn = document.querySelector('#p-menu li');
-
-// $(document).ready(function() {
-//   // Event listener for element with ID "ub"
-//   $(ub).on("click", function() {
-//     if ($(this).hasClass("active")) {
-//       $(this).removeClass("active");
-//     } else {
-//       $(this).addClass("active");
-//     }
-//   });
-
-//   // Event listener for element with ID "eb"
-//   $(eb).on("click", function() {
-//     if ($(this).hasClass("active")) {
-//       $(this).removeClass("active");
-//     } else {
-//       $(this).addClass("active");
-//     }
-//   });
-// });

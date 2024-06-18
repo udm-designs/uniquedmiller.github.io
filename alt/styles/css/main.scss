@@ -360,7 +360,14 @@ nav a {
 } 
 
 // 6. Projects Section
+#projects {
+    position: relative;
+    border-bottom: 10px solid $acc;
+}
 #projects #p-menu {
+    position: sticky;
+    top: 0px;
+    z-index: 2;
     background-color: $sec;
     ul {
         @include contain($contain);
@@ -444,6 +451,15 @@ nav a {
         background-color: #00C9FF55;
         backdrop-filter: blur(10px);
         mix-blend-mode: color;
+    }
+    &:last-child .cblock::after {
+        background: linear-gradient(to bottom, #00C9FF55 20%, $acc 100%);
+        mix-blend-mode: normal;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
     }
 }
 
