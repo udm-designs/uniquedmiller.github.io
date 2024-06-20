@@ -31,6 +31,23 @@ img, svg {
   width: 1rem;
 }
 
+@-webkit-keyframes slide-in {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 0%;
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 0%;
+  }
+}
 @font-face {
   font-family: "pl";
   src: url("../fonts/poppins-light-webfont.woff2") format("woff2"), url("../fonts/poppins-light-webfont.woff") format("woff");
@@ -692,7 +709,6 @@ footer p {
 
 form {
   position: fixed;
-  top: 0px;
   left: 0px;
   z-index: 3;
   width: 100%;
@@ -700,19 +716,21 @@ form {
   background-color: rgba(5, 5, 5, 0.3333333333);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
+  pointer-events: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 form fieldset {
-  width: 90dvw;
-  min-height: 90dvh;
+  min-width: 50dvw;
+  max-width: 75dvw;
+  min-height: 50dvh;
   -webkit-box-shadow: 2px 2px 5px rgba(39, 39, 39, 0.3333333333);
           box-shadow: 2px 2px 5px rgba(39, 39, 39, 0.3333333333);
   margin: auto;
@@ -736,8 +754,20 @@ form ul {
 }
 form ul li {
   -webkit-box-flex: 1;
-      -ms-flex: 1 50%;
-          flex: 1 50%;
+      -ms-flex: 1;
+          flex: 1;
+}
+form ul li:last-child, form ul li:nth-child(3) {
+  -webkit-box-flex: 100%;
+      -ms-flex: 100%;
+          flex: 100%;
+}
+@media (max-width: 575px) {
+  form ul li {
+    -webkit-box-flex: 100%;
+        -ms-flex: 100%;
+            flex: 100%;
+  }
 }
 form label {
   display: block;
@@ -796,5 +826,16 @@ form button:not(button.btn):hover {
 }
 
 form.show {
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  pointer-events: all;
+  -webkit-animation: slide-in 0.75s ease-in-out forwards;
+          animation: slide-in 0.75s ease-in-out forwards;
+}
+
+form.onclose {
+  -webkit-animation: slide-in 0.75s ease-in-out forwards;
+          animation: slide-in 0.75s ease-in-out forwards;
+  animation-direction: reverse;
 }
