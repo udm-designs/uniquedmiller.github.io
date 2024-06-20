@@ -277,7 +277,6 @@ nav .container {
             color: $main;
         }
         @include mob {
-            order: 1;
             font-size: 1.5rem;
         }
     }
@@ -288,16 +287,19 @@ nav .container {
 }
 nav .container div:last-child {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 25px;
     @include mob {
-        order: 2;
+        button {
+            flex: 100%;
+        }
     }
 }
 nav a {
     @include font($reg, 1.25rem);
     @include mob {
         font-size: 1.125rem;
-        order: 3;
     }
     color: #050505;
 }

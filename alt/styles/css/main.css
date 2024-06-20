@@ -264,9 +264,6 @@ nav .container .logo:hover {
 }
 @media (max-width: 575px) {
   nav .container .logo {
-    -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1;
     font-size: 1.5rem;
   }
 }
@@ -284,13 +281,18 @@ nav .container div:last-child {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   gap: 25px;
 }
 @media (max-width: 575px) {
-  nav .container div:last-child {
-    -webkit-box-ordinal-group: 3;
-        -ms-flex-order: 2;
-            order: 2;
+  nav .container div:last-child button {
+    -webkit-box-flex: 100%;
+        -ms-flex: 100%;
+            flex: 100%;
   }
 }
 
@@ -304,9 +306,6 @@ nav a {
 @media (max-width: 575px) {
   nav a {
     font-size: 1.125rem;
-    -webkit-box-ordinal-group: 4;
-        -ms-flex-order: 3;
-            order: 3;
   }
 }
 

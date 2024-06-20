@@ -3,7 +3,6 @@ $(document).ready(function() {
     // Event listener using event delegation for all li elements under #p-menu
     $('#close').on("click", function() {
       // Remove 'active' class from all li elements
-      $('#contactform').addClass('onclose');
       $('#contactform').removeClass('show');
     });
     $('.contactbtn').on("click", function() {
