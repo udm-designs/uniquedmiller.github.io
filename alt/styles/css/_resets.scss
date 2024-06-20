@@ -17,6 +17,9 @@ button, input, textarea {
     border: none;
     outline: none;
 }
+button {
+    cursor: pointer;
+}
 img, svg {
     width: 1rem;
 }

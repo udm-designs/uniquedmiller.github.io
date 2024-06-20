@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Unique Miller's Portfolio</title>
+		<title>Unique Miller's Portfolio | Home</title>
 		<link href="styles/css/main.css" rel="stylesheet">
 		<link rel="apple-touch-icon" sizes="180x180" href="styles/imgs/favicon/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="styles/imgs/favicon/favicon-32x32.png">
@@ -23,11 +23,17 @@
 					<a href="index.html" class="logo">
 						<p>Unique M</p>
 					</a>
-					<a href="#" class="btn">Let's Chat!</a>
 					<div>
 						<a href="#projects">Projects</a>
-						<a href="#">About</a>
-						<a href="#">Resume</a>
+						<a href="#about">About</a>
+						<a href="resume.html">Resume</a>
+						<button
+							data-href="contact.html"
+							data-title="Contact"
+							class="btn alt"
+						>
+							Let's Chat!
+						</a>
 					</div>					
 				</div>
 			</nav>
@@ -38,7 +44,7 @@
 				</p>
 				<div>
 					<a href="#projects" class="btn">projects</a>
-					<a href="#" class="btn alt">resume</a>
+					<a href="resume.html" class="btn">resume</a>
 				</div>
 			</div>
 			<a href="#projects" id="scroll">
@@ -66,6 +72,7 @@
 						</li>
 					</ul>
 				</div>
+				<!-- UX DESIGN PROJECTS -->
 				<div id="uxp" class="active accord">
 					<div class="card">
 						<div class="container">
@@ -81,6 +88,7 @@
 						<div class="cblock"></div>
 					</div>
 				</div>
+				<!-- EDITORIAL DESIGN PROJECTS -->
 				<div id="edp" class="accord">
 					<div class="card">
 						<div class="container">
@@ -96,6 +104,7 @@
 						<div class="cblock"></div>
 					</div>
 				</div>
+				<!-- PACKAGING DESIGN PROJECTS -->
 				<div id="pap" class="accord">
 					<div class="card">
 						<div class="container">
@@ -171,12 +180,11 @@
 					</div>
 					<div class="btns">
 						<a href="resume.html" class="btn">See Resume</a>
-						<a href="#contact" class="btn">Get In Touch!</a>
+						<a href="#" class="btn">Get In Touch!</a>
 					</div>
 					<div class="diamond"></div>
 				</div>
 			</section>
-			
 
 			<section id="nextsteps">
 				<div class="container">
@@ -190,7 +198,14 @@
 					</h4>
 					<div class="btns">
 						<a href="#" class="btn diamond">Shoot Me a Message</a>
-						<a href="#" class="btn diamond">See More on Behance</a>
+						<a
+							href="https://www.behance.net/uniquedmiller?locale=en_US&"
+							class="btn diamond"
+							target="_blank"
+						>
+							See More on Behance
+						</a>
+						<!-- MAKE A LINKTREE FOR SOCIALS -->
 						<a href="#" class="btn diamond">Connect with Me on Socials</a>
 					</div>
 				</div>
@@ -200,6 +215,47 @@
 		<footer>
 			<p>Designed and developed by Unique Miller © 2024</p>
 		</footer>
+		<!-- Modals / Popup Content -->
+		<form action="/handle-it" method="post">
+			<fieldset>
+				<button id="close">&#10005;</button>
+				<ul>
+					<li>
+						<label for="name">First & Last Name</label>
+						<input 
+							type="text" 
+							id="name" 
+							name="full_name" 
+							required
+							placeholder="Jane Doe OR Jane D."
+						>
+					</li>
+					<li>
+						<label for="email">Email</label>
+						<input 
+							type="email" 
+							id="email" 
+							name="email" 
+							required
+							placeholder="youremail@mail.com"
+						>
+					</li>
+					<li>
+						<label for="msg">Message</label>
+						<textarea 
+							name="msg" 
+							id="msg" 
+							required 
+							spellcheck="true"
+							placeholder="Leave me a note or let's schedule a chat!"
+						></textarea>
+					</li>
+					<li>
+						<button type="submit" class="btn">Send</button>
+					</li>
+				</ul>
+			</fieldset>
+		</form>
 		<!-- scripts -->
 		<script src="styles/js/main.js"></script>
 		<script src="styles/js/project-nav.js"></script>
