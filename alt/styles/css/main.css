@@ -88,7 +88,7 @@ body, input, textarea, button {
   font-weight: normal;
   font-style: normal;
 }
-@media (max-width: 575px) {
+@media (max-width: 750px) {
   body, input, textarea, button {
     font-size: 1rem;
   }
@@ -100,7 +100,7 @@ h1, h2, label {
   font-weight: normal;
   font-style: normal;
 }
-@media (max-width: 575px) {
+@media (max-width: 750px) {
   h1, h2, label {
     font-size: 2rem;
   }
@@ -262,12 +262,12 @@ nav .container .logo {
 nav .container .logo:hover {
   color: #ff0055;
 }
-@media (max-width: 575px) {
+@media (max-width: 750px) {
   nav .container .logo {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 }
-@media (max-width: 575px) {
+@media (max-width: 750px) {
   nav .container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -277,7 +277,7 @@ nav .container .logo:hover {
   }
 }
 
-nav .container div:last-child {
+nav .container .links {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -287,12 +287,23 @@ nav .container div:last-child {
       -ms-flex-pack: center;
           justify-content: center;
   gap: 25px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
-@media (max-width: 575px) {
-  nav .container div:last-child button {
-    -webkit-box-flex: 100%;
-        -ms-flex: 100%;
-            flex: 100%;
+nav .container .links div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 25px;
+}
+@media (max-width: 750px) {
+  nav .container .links {
+    width: 100%;
+  }
+  nav .container .links button {
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 }
 
@@ -303,7 +314,7 @@ nav a {
   font-style: normal;
   color: #050505;
 }
-@media (max-width: 575px) {
+@media (max-width: 750px) {
   nav a {
     font-size: 1.125rem;
   }
@@ -335,7 +346,7 @@ nav a {
 .hero-content h1 span {
   color: #00C9FF;
 }
-@media (max-width: 575px) {
+@media (max-width: 750px) {
   .hero-content h1 {
     font-size: 2rem;
   }
@@ -343,6 +354,7 @@ nav a {
 .hero-content p {
   max-width: 500px;
   margin: 10px 0px 25px;
+  text-align: center;
 }
 .hero-content div {
   display: -webkit-box;
@@ -377,7 +389,7 @@ nav a {
 }
 #scroll .diamond {
   position: absolute;
-  background: linear-gradient(135deg, #FFEA00 50%, #ff0055 50%);
+  background: linear-gradient(135deg, #FFEA00 50%, #FFEA00 50%);
   z-index: -1;
   -webkit-transform: translateY(50%) rotate(45deg);
           transform: translateY(50%) rotate(45deg);
@@ -418,6 +430,18 @@ nav a {
   -webkit-transform: translateY(50%) rotate(-135deg);
           transform: translateY(50%) rotate(-135deg);
   color: #FAFAFA;
+  background: linear-gradient(135deg, #FFEA00 50%, #ff0055 50%);
+}
+@media (max-width: 750px) {
+  #scroll .txt {
+    height: 9rem;
+  }
+}
+@media (max-width: 750px) {
+  #scroll {
+    line-height: 0.25em;
+    letter-spacing: 0.25em;
+  }
 }
 
 #projects {
@@ -484,6 +508,11 @@ nav a {
   background-color: #ff0055;
   -webkit-transform: translateY(50%) rotate(45deg);
           transform: translateY(50%) rotate(45deg);
+}
+@media (max-width: 750px) {
+  #projects #p-menu li {
+    font-size: 1rem;
+  }
 }
 
 #projects .accord {
@@ -581,7 +610,7 @@ nav a {
           justify-content: space-between;
   gap: 25px;
 }
-@media (max-width: 575px) {
+@media (max-width: 750px) {
   #about .abt-me {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -642,7 +671,7 @@ nav a {
           flex: 1;
 }
 #about .diamond {
-  background: linear-gradient(135deg, #ff0055 50%, #00C9FF 50%);
+  background: linear-gradient(135deg, #00C9FF 50%, #00C9FF 50%);
   height: 50px;
   -webkit-transform: translateY(-50%) rotate(45deg);
           transform: translateY(-50%) rotate(45deg);
@@ -651,7 +680,7 @@ nav a {
   -webkit-transform: translateY(50%) rotate(45deg);
           transform: translateY(50%) rotate(45deg);
   margin-left: auto;
-  background: linear-gradient(135deg, #FFEA00 50%, #ff0055 50%);
+  background: linear-gradient(135deg, #FFEA00 50%, #FFEA00 50%);
 }
 
 #nextsteps {
@@ -761,7 +790,7 @@ form ul li:last-child, form ul li:nth-child(3) {
       -ms-flex: 100%;
           flex: 100%;
 }
-@media (max-width: 575px) {
+@media (max-width: 750px) {
   form ul li {
     -webkit-box-flex: 100%;
         -ms-flex: 100%;

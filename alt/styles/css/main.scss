@@ -134,7 +134,7 @@ $contain: 85%;
   @media (max-width: 1280px) and (min-width: 876px) { @content; }
 }
 @mixin mob {
-  @media (max-width: 575px) { @content; }
+  @media (max-width: 750px) { @content; }
 //    change to 875px
 }
 
@@ -277,7 +277,7 @@ nav .container {
             color: $main;
         }
         @include mob {
-            font-size: 1.5rem;
+            font-size: 2rem;
         }
     }
     @include mob {
@@ -285,14 +285,21 @@ nav .container {
         gap: 15px;
     }
 }
-nav .container div:last-child {
+nav .container .links {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 25px;
+    align-items: center;
+    div {
+        display: flex;
+        gap: 25px;
+    }
     @include mob {
+        width: 100%;
         button {
-            flex: 100%;
+            padding-top: 10px;
+            padding-bottom: 10px;
         }
     }
 }
@@ -324,6 +331,7 @@ nav a {
     p {
         max-width: 500px;
         margin: 10px 0px 25px;
+        text-align: center;
     }
     div {
         display: flex;
@@ -343,7 +351,7 @@ nav a {
     overflow: hidden;
     .diamond {
         position: absolute;
-        background: linear-gradient(135deg, $sec 50%, $main 50%);
+        background: linear-gradient(135deg, $sec 50%, $sec 50%);
         z-index: -1;
         transform: translateY(50%) rotate(45deg);
         transition: 
@@ -370,8 +378,16 @@ nav a {
                 transform-origin: center;
                 transform: translateY(50%) rotate(-135deg);
                 color: $wht;
+                background: linear-gradient(135deg, $sec 50%, $main 50%);
             }
         }
+        @include mob {
+            height: 9rem;
+        }
+    }
+    @include mob {
+        line-height: 0.25em;
+        letter-spacing: 0.25em;
     }
 } 
 
@@ -425,6 +441,9 @@ nav a {
                 background-color: $main;
                 transform: translateY(50%) rotate(45deg);
             }
+        }
+        @include mob {
+            font-size: 1rem;
         }
     }
 }
@@ -537,13 +556,13 @@ nav a {
         }
     }
     .diamond {
-        background: linear-gradient(135deg, $main 50%, $acc 50%);
+        background: linear-gradient(135deg, $acc 50%, $acc 50%);
         height: 50px;
         transform: translateY(-50%) rotate(45deg);
         &:last-child {
             transform: translateY(50%) rotate(45deg);
             margin-left: auto;
-            background: linear-gradient(135deg, $sec 50%, $main 50%);
+            background: linear-gradient(135deg, $sec 50%, $sec 50%);
         }
     }
 }
