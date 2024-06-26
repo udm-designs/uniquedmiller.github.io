@@ -468,6 +468,32 @@ nav a {
   display: flex;
   gap: 10px;
 }
+@media (max-width: 750px) {
+  #projects #p-menu ul {
+    width: 100%;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 0px;
+  }
+  #projects #p-menu ul .active {
+    -webkit-box-flex: 100%;
+        -ms-flex: 100%;
+            flex: 100%;
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+    opacity: 1;
+    font-size: 1rem;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  #projects #p-menu ul .active .diamond {
+    display: block;
+  }
+}
 #projects #p-menu ul .active {
   background-color: #ff0055;
   color: #FAFAFA;
@@ -511,7 +537,29 @@ nav a {
 }
 @media (max-width: 750px) {
   #projects #p-menu li {
-    font-size: 1rem;
+    font-size: 0.8rem;
+    opacity: 0.6;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-wrap: nowrap;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #projects #p-menu li .diamond {
+    bottom: 0px;
+    margin: 0px;
+    display: none;
+  }
+  #projects #p-menu li:hover {
+    opacity: 1;
   }
 }
 
@@ -539,14 +587,34 @@ nav a {
   grid-template-columns: 1fr 1fr;
       grid-template-areas: ". cont";
 }
+@media (max-width: 750px) {
+  #projects .card .container {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+        grid-template-areas: "cont" ".";
+  }
+}
 #projects .card .content {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: cont;
   padding: 100px 0px 100px 25px;
 }
+@media (max-width: 750px) {
+  #projects .card .content {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+}
 #projects .card .content p {
   margin: 10px 0px 20px;
+}
+@media (max-width: 750px) {
+  #projects .card .content {
+    padding: 50px 0px 0px;
+  }
 }
 #projects .card .buttons {
   display: -webkit-box;
@@ -572,6 +640,12 @@ nav a {
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
   mix-blend-mode: color;
+}
+@media (max-width: 750px) {
+  #projects .card .cblock {
+    height: 60%;
+    width: 100%;
+  }
 }
 #projects .card:last-child .cblock::after {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, rgba(0, 201, 255, 0.3333333333)), to(#00C9FF));
@@ -722,6 +796,29 @@ nav a {
 #nextsteps .btns a {
   height: 11.5em;
 }
+@media (max-width: 750px) {
+  #nextsteps .btns a {
+    height: 8em;
+  }
+}
+@media (max-width: 750px) {
+  #nextsteps .btns {
+    margin-top: 2.5em;
+    gap: 4em;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+@media (max-width: 750px) {
+  #nextsteps {
+    padding: 25px 0px;
+  }
+}
 
 footer {
   background-color: #272727;
@@ -765,6 +862,12 @@ form fieldset {
   padding: 25px;
   border: none;
   background-color: #FAFAFA;
+}
+@media (max-width: 750px) {
+  form fieldset {
+    max-width: 90vw;
+    height: 95vh;
+  }
 }
 form ul {
   display: -webkit-box;
@@ -858,12 +961,6 @@ form.show {
   display: -ms-flexbox;
   display: flex;
   pointer-events: all;
-  -webkit-animation: slide-in 0.75s ease-in-out forwards;
-          animation: slide-in 0.75s ease-in-out forwards;
-}
-
-form.onclose {
-  -webkit-animation: slide-in 0.75s ease-in-out forwards;
-          animation: slide-in 0.75s ease-in-out forwards;
-  animation-direction: reverse;
+  -webkit-animation: slide-in 0.5s ease-in-out forwards;
+          animation: slide-in 0.5s ease-in-out forwards;
 }

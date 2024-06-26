@@ -409,6 +409,23 @@ nav a {
         @include contain($contain);
         display: flex;
         gap: 10px;
+        @include mob {
+            width: 100%;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0px;
+            .active {
+                flex: 100%;
+                order: 3;
+                opacity: 1;
+                font-size: 1rem;
+                padding-top: 15px;
+                padding-bottom: 15px;
+                .diamond {
+                    display: block;
+                }
+            }
+        }
         .active {
             background-color: #ff0055;
             color: $wht;
@@ -443,10 +460,27 @@ nav a {
             }
         }
         @include mob {
-            font-size: 1rem;
+            font-size: 0.8rem;
+            opacity: 0.6;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            text-wrap: nowrap;
+            flex: 1;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            .diamond {
+                bottom: 0px;
+                margin: 0px;
+                display: none;
+            }
+            &:hover {
+                opacity: 1;
+            }
         }
     }
 }
+
 #projects .accord {
     display: none;
 }
@@ -464,12 +498,20 @@ nav a {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-areas: ". cont";
+        @include mob {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas: "cont" ".";
+        }
     }
     .content {
         grid-area: cont;
         padding: 100px 0px 100px 25px;
         p {
             margin: 10px 0px 20px;
+        }
+        @include mob {
+            padding: 50px 0px 0px;
         }
     }
     .buttons {
@@ -490,6 +532,10 @@ nav a {
         background-color: #00C9FF55;
         backdrop-filter: blur(10px);
         mix-blend-mode: color;
+        @include mob {
+            height: 60%;
+            width: 100%;
+        }
     }
     &:last-child .cblock::after {
         background: linear-gradient(to bottom, #00C9FF55 20%, $acc 100%);
@@ -594,7 +640,19 @@ nav a {
         margin-top: 5.5em;
         a {
             height: 11.5em;
+            @include mob {
+                height: 8em;
+            }
         }
+        @include mob {
+            margin-top: 2.5em;
+            gap: 4em;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    @include mob {
+        padding: 25px 0px;
     }
 }
 
@@ -632,6 +690,10 @@ form {
         padding: 25px;
         border: none;
         background-color: $wht;
+        @include mob {
+            max-width: 90vw;
+            height: 95vh;
+        }
     }
     ul {
         display: flex;
@@ -687,9 +749,5 @@ form {
 form.show {
     display: flex;
     pointer-events: all;
-    animation: slide-in 0.75s ease-in-out forwards;
-}
-form.onclose {
-    animation: slide-in 0.75s ease-in-out forwards;
-    animation-direction: reverse;
+    animation: slide-in 0.5s ease-in-out forwards;
 }
