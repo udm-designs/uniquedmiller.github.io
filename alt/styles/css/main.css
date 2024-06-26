@@ -739,7 +739,7 @@ nav a {
   gap: 25px;
   padding-bottom: 25px;
 }
-#about .btns a {
+#about .btns a, #about .btns button {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -793,11 +793,11 @@ nav a {
   padding-bottom: 50px;
   margin-top: 5.5em;
 }
-#nextsteps .btns a {
+#nextsteps .btns a, #nextsteps .btns button {
   height: 11.5em;
 }
 @media (max-width: 750px) {
-  #nextsteps .btns a {
+  #nextsteps .btns a, #nextsteps .btns button {
     height: 8em;
   }
 }

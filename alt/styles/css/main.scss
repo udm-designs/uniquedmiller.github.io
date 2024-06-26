@@ -597,7 +597,7 @@ nav a {
         justify-content: center;
         gap: 25px;
         padding-bottom: 25px;
-        a {
+        a, button {
             flex: 1;
         }
     }
@@ -638,7 +638,7 @@ nav a {
         gap: 6em;
         padding-bottom: 50px;
         margin-top: 5.5em;
-        a {
+        a, button {
             height: 11.5em;
             @include mob {
                 height: 8em;
