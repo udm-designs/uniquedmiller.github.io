@@ -909,6 +909,8 @@ form input, form textarea {
   display: block;
   width: 100%;
   padding: 10px 0px 10px 10px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 form input:valid, form textarea:valid {
   border: 0.5px solid #00C9FF;

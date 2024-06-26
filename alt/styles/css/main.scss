@@ -720,6 +720,7 @@ form {
         display: block;
         width: 100%;
         padding: 10px 0px 10px 10px;
+        transition: all 0.5s;
         &:valid {
             border: 0.5px solid $acc;
         }
