@@ -529,9 +529,8 @@ nav a {
         height: 100%;
         width: 50%;
         z-index: -1;
-        background-color: #00C9FF55;
+        background-color: #00C9FF22;
         backdrop-filter: blur(10px);
-        mix-blend-mode: color;
         @include mob {
             height: 60%;
             width: 100%;
@@ -752,3 +751,5 @@ form.show {
     pointer-events: all;
     animation: slide-in 0.5s ease-in-out forwards;
 }
+
+// 11. RESUME PAGE
