@@ -236,7 +236,7 @@ header .s-overlay {
 
 nav .container {
   width: 85%;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0px auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -322,7 +322,7 @@ nav a {
 
 .hero-content {
   width: 85%;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0px auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -461,7 +461,7 @@ nav a {
 }
 #projects #p-menu ul {
   width: 85%;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0px auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -579,7 +579,7 @@ nav a {
 }
 #projects .card .container {
   width: 85%;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0px auto;
   display: -ms-grid;
   display: grid;
@@ -666,7 +666,7 @@ nav a {
 }
 #about .container {
   width: 85%;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0px auto;
 }
 #about h2 {
@@ -762,7 +762,7 @@ nav a {
 }
 #nextsteps .container {
   width: 85%;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0px auto;
   text-align: center;
 }
@@ -825,7 +825,7 @@ footer {
 }
 footer p {
   width: 85%;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0px auto;
   text-align: center;
   padding: 25px 0px;
@@ -984,7 +984,7 @@ form.show {
 
 #resume main h1, #resume main .r-links, #resume main #s1, #resume main #s2, #resume main #s3 {
   width: 85%;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0px auto;
 }
 #resume main h1 {
@@ -1019,11 +1019,101 @@ form.show {
 #resume main #s1, #resume main #s2 {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 50px 1fr;
+  -ms-grid-columns: 1fr 35px 1fr;
   grid-template-columns: 1fr 1fr;
-  gap: 50px;
+  gap: 35px;
+  margin-bottom: 35px;
+}
+#resume main #s1 h2, #resume main #s2 h2 {
+  margin-bottom: 10px;
 }
 #resume main #s1 .mission {
   background-color: #FFEA00;
   padding: 25px;
+}
+#resume main #s1 .profic {
+  padding: 25px;
+}
+#resume main #s1 .profic ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 25px;
+}
+#resume main #s1 .profic li img {
+  display: block;
+  width: 3rem;
+  margin: 0px auto 10px;
+}
+#resume main #s1 .profic li p {
+  font-size: 1.25rem;
+}
+#resume main #s2 {
+  -ms-grid-columns: 2fr 1fr;
+  grid-template-columns: 2fr 1fr;
+}
+#resume main #s2 .work-exp ol {
+  list-style-type: none;
+}
+#resume main #s2 .work-exp ol h3 {
+  font-size: 1.125rem;
+  margin-bottom: 10px;
+}
+#resume main #s2 .work-exp ol h4 {
+  font-family: "pr", sans-serif;
+  font-size: 1rem;
+  font-weight: normal;
+  font-style: normal;
+  padding-left: 10px;
+  margin: 0px 0px 10px 10px;
+  border-left: 2px solid #00C9FF;
+}
+#resume main #s2 .work-exp ol ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+}
+#resume main #s2 .work-exp ol ul li {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+#resume main #s2 .work-exp ol ul li:last-child {
+  margin-bottom: 25px;
+}
+#resume main #s2 .skills {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 25px;
+}
+#resume main #s2 .skills div ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 10px;
+}
+#resume main #s2 .skills div ul li {
+  border: 0.5px solid #00C9FF;
+  padding: 10px;
+  font-size: 1rem;
+}
+#resume main #s3 {
+  text-align: center;
+  padding-bottom: 35px;
+}
+#resume main #s3 p:first-of-type {
+  margin: 10px 0px;
 }
