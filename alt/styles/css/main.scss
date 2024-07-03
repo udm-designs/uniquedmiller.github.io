@@ -789,6 +789,10 @@ form.show {
                 color: $wht;
             }
         }
+        @include mob {
+            flex-direction: column;
+            align-items: center;
+        }
     }
     #s1, #s2 {
         display: grid;
@@ -797,6 +801,10 @@ form.show {
         margin-bottom: 35px;
         h2 {
             margin-bottom: 10px;
+        }
+        @include mob {
+            grid-template-columns: 1fr;
+            gap: 15px;
         }
     }
     #s1 {
@@ -810,6 +818,11 @@ form.show {
                 display: flex;
                 flex-wrap: wrap;
                 gap: 25px;
+                @include mob {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    text-align: center;
+                }
             }
             li img {
                 display: block;
@@ -862,6 +875,10 @@ form.show {
                     font-size: 1rem;
                 }
             }
+        }
+        @include mob {
+            grid-template-columns: 1fr;
+            gap: 15px;
         }
     }
     #s3 {
