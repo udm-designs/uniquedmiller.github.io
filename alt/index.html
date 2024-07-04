@@ -59,7 +59,7 @@
 		</header>
 
 		<main>
-			<section id="projects">
+			<section id="projects" name="projects">
 				<div id="p-menu">
 					<ul>
 						<li id="uxbtn" class="active libtn">
@@ -225,7 +225,8 @@
 			<p>Designed and developed by Unique Miller © 2024</p>
 		</footer>
 		<!-- Modals / Popup Content -->
-		<form action="uniquedmiller@gmail.com" method="post" id="contactform">
+		<?php include 'contact.php'?>
+		<form method="POST" action="contact.php" id="contactform">
 			<fieldset>
 				<button id="close">&#10005;</button>
 				<ul>
