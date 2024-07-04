@@ -225,8 +225,18 @@
 			<p>Designed and developed by Unique Miller © 2024</p>
 		</footer>
 		<!-- Modals / Popup Content -->
-		<?php include 'contact.php'?>
-		<form method="POST" action="contact.php" id="contactform">
+		<form method="POST" action="https://api.web3forms.com/submit" id="contactform">
+			<!-- <input type="hidden" name="apikey" value="YOUR_ACCESS_KEY_HERE"> -->
+			<input type="hidden" name="apikey" value="bdf737df-aa43-468e-8d0e-a2e4d88b8c5d">
+			<!-- Optional: Can be type="hidden" or type="text" for subject -->
+			<input type="hidden" name="subject" value="New Submission from uniquedmiller.com">
+			<!-- Optional: From Name you want to see in the email -->
+			<input type="hidden" name="from_name" value="uniquedmiller.com">
+			<!-- If javascript, use "window.location.hash" for redirects -->
+			<input type="hidden" name="redirect" value="https://web3forms.com/success">
+			<!-- Optional: But Recommended: To Prevent SPAM Submission. 
+				Make sure its hidden by default -->
+			<input type="checkbox" name="botcheck" id="" style="display: none;">
 			<fieldset>
 				<button id="close">&#10005;</button>
 				<ul>
