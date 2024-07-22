@@ -19,7 +19,7 @@ $(document).ready(function() {
 // Contact Form Modal
 $(document).ready(function() {
     // Event listener using event delegation for all li elements under #p-menu
-    $('#close').on("click", function() {
+    $('.contact-close').on("click", function() {
       // Remove 'active' class from all li elements
       $('#contactform').removeClass('show');
     });
@@ -27,6 +27,18 @@ $(document).ready(function() {
         // Remove 'active' class from all li elements
         $('#contactform').addClass('show');
     });
+});
+// Socials Modal
+$(document).ready(function() {
+  // Event listener using event delegation for all li elements under #p-menu
+  $('.social-close').on("click", function() {
+    // Remove 'active' class from all li elements
+    $('#social-mediums').removeClass('show');
+  });
+  $('.s-btn').on("click", function() {
+      // Remove 'active' class from all li elements
+      $('#social-mediums').addClass('show');
+  });
 });
 
 // // navigation

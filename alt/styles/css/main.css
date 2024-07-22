@@ -957,13 +957,122 @@ form button:not(button.btn):hover {
           transform: rotate(90deg);
 }
 
-form.show {
+.show {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   pointer-events: all;
   -webkit-animation: slide-in 0.5s ease-in-out forwards;
           animation: slide-in 0.5s ease-in-out forwards;
+}
+
+#social-mediums {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(5, 5, 5, 0.3333333333);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  position: fixed;
+  left: 0px;
+  z-index: 3;
+  pointer-events: none;
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+#social-mediums .container {
+  position: relative;
+  min-width: 50dvw;
+  max-width: 95dvw;
+  min-height: 50dvh;
+  -webkit-box-shadow: 2px 2px 5px rgba(39, 39, 39, 0.3333333333);
+          box-shadow: 2px 2px 5px rgba(39, 39, 39, 0.3333333333);
+  margin: auto;
+  padding: 25px;
+  border: none;
+  background-color: #FAFAFA;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+#social-mediums a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+  color: #ff0055;
+  padding: 25px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-transition: background-color 0.5s, color 0.5s, -webkit-box-flex 0.5s;
+  transition: background-color 0.5s, color 0.5s, -webkit-box-flex 0.5s;
+  transition: background-color 0.5s, color 0.5s, flex 0.5s;
+  transition: background-color 0.5s, color 0.5s, flex 0.5s, -webkit-box-flex 0.5s, -ms-flex 0.5s;
+}
+#social-mediums a i {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  font-size: 2rem;
+}
+#social-mediums a span {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+#social-mediums a:hover {
+  background-color: #ff0055;
+  color: #FAFAFA;
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+}
+#social-mediums button:not(button.btn) {
+  font-family: "staat", fantasy;
+  font-size: 1.75rem;
+  font-weight: normal;
+  font-style: normal;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  display: block;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin: 0px 0px 10px auto;
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+#social-mediums button:not(button.btn):hover {
+  color: #ff0055;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
 }
 
 #resume header {
