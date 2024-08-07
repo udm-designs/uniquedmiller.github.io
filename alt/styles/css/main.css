@@ -958,10 +958,10 @@ form button:not(button.btn):hover {
 }
 
 .show {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  pointer-events: all;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  pointer-events: all !important;
   -webkit-animation: slide-in 0.5s ease-in-out forwards;
           animation: slide-in 0.5s ease-in-out forwards;
 }

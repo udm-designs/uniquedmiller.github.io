@@ -747,8 +747,8 @@ form {
     }
 }
 .show {
-    display: flex;
-    pointer-events: all;
+    display: flex !important;
+    pointer-events: all !important;
     animation: slide-in 0.5s ease-in-out forwards;
 }
 
@@ -961,3 +961,5 @@ form {
         }
     }
 }
+
+// 13. PROCESS PAGE(S)
