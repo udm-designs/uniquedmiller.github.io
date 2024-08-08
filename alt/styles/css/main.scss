@@ -277,6 +277,7 @@ nav .container {
         display: block;
         min-width: 150px;
         max-width: 200px;
+        object-fit: contain;
         transition: color 0.5s;
         &:hover {
             color: $main;

@@ -263,6 +263,8 @@ nav .container .logo {
   display: block;
   min-width: 150px;
   max-width: 200px;
+  -o-object-fit: contain;
+     object-fit: contain;
   -webkit-transition: color 0.5s;
   transition: color 0.5s;
 }
