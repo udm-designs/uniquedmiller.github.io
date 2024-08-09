@@ -1034,6 +1034,14 @@ form {
         h2 {
             margin-bottom: 10px;
         }
+        h3 {
+            margin: 10px 0px 8px;
+        }
+        ul li {
+            list-style-type: square;
+            margin-left: 25px;
+            line-height: 1.25em;
+        }
     }
     .sbs {
         display: flex;
