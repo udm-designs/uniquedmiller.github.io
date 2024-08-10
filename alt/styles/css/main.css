@@ -1334,6 +1334,7 @@ form button:not(button.btn):hover {
 }
 #pa-process main .overview p {
   text-align: center;
+  margin: 0px auto;
 }
 #pa-process main .container {
   width: 85%;
@@ -1354,10 +1355,17 @@ form button:not(button.btn):hover {
 #pa-process main .container h3 {
   margin: 15px 0px 8px;
 }
+#pa-process main .container ul:not(h3 + ul) {
+  margin-top: 15px;
+}
 #pa-process main .container ul li {
   list-style-type: square;
   margin-left: 25px;
   line-height: 1.25em;
+  max-width: 600px;
+}
+#pa-process main .container p {
+  max-width: 600px;
 }
 #pa-process main .sbs {
   display: -webkit-box;

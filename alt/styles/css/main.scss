@@ -1020,6 +1020,7 @@ form {
     }
     .overview p {
         text-align: center;
+        margin: 0px auto;
     }
     .container {
         @include contain($contain);
@@ -1037,10 +1038,17 @@ form {
         h3 {
             margin: 15px 0px 8px;
         }
+        ul:not(h3 + ul) {
+            margin-top: 15px;
+        }
         ul li {
             list-style-type: square;
             margin-left: 25px;
             line-height: 1.25em;
+            max-width: 600px;
+        }
+        p {
+            max-width: 600px;
         }
     }
     .sbs {
