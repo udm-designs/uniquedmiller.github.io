@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars | Earthly Roads</title>
+    <link type="text/css" rel="stylesheet" href="styles/css/main.css"/>
+</head>
+<body id="carspg">
+    <noscript><p>Sorry, you have to have javascript turned on for this website to display properly. :(</p></noscript>
+<!-- Main Content -->
+    <header>
+        <nav>
+            <a href="index.html" id="logo"><img src="styles/imgs/earthlyroads_logo-black.svg" alt="earthly roads logo"></a>
+            <ul id="mainnav">
+                <li><a href="cars.html">Cars</a></li>
+                <li><a href="fees.html">Fees</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="404.html">Contact</a></li>
+            </ul>
+            <img src="styles/imgs/navbar_icon.svg" id="mobopen" alt="Open Navigation">
+            <img src="styles/imgs/navclose_icon.svg" id="mobclose" alt="Close Navigation">
+        </nav>
+    </header>
+    <section class="secta">
+        <div class="intro">
+            <h2>Our Selection</h2>
+            <p>Start Renting an Eco-Friendly or Learn More About the Cars We Rent Out!</p>
+        </div>
+        <div id="quickrent">
+            <div class="container">
+                <h2>Start Renting</h2><img src="styles/imgs/down_chevron.svg" alt="open renting area.">
+            </div>
+        </div>
+        <form id="rentingarea">
+            <div class="pickup">
+                <label for="pickuploc">Pick-up Location</label>
+                <select name="pickuploc" id="pickuploc" required>
+                    <option value="" disabled selected>Please Select</option>
+                    <option value="de">450 Rent St, Dover, DE</option>
+                    <option value="me">120 Rent St, Augusta, ME</option>
+                    <option value="md">230 Rent St, Annapolis, MD</option>
+                    <option value="ga">340 Rent St, Atlanta, GA</option>
+                    <option value="ct">560 Rent St, Harford, CT</option>
+                    <option value="ny">670 Rent St, Albany, NY</option>
+                    <option value="va">780 Rent St, Richmond, VA</option>
+                    <option value="sc">890 Rent St, Columbia, SC</option>
+                    <option value="ri">920 Rent St, Providence, RI</option>
+                    <option value="nc">230 Rent St, Raleigh, NC</option>
+                    <option value="nj">450 Rent St, Trenton, NJ</option>
+                    <option value="nh">660 Rent St, Concord, NH</option>
+                    <option value="ma">8840 Rent St, Boston, MA</option>
+                    <option value="pa">8900 Rent St, Harrisburg, PA</option>
+                    <option value="fl">1230 Rent St, Orlando, FL</option>
+                </select>
+            </div>
+            <div class="dropoff">
+                <label for="dropoffloc">Drop-off Location</label>
+                <select name="dropoffloc" id="dropoffloc" required>
+                    <option value="" disabled selected>Please Select</option>
+                    <option value="de">450 Rent St, Dover, DE</option>
+                    <option value="me">120 Rent St, Augusta, ME</option>
+                    <option value="md">230 Rent St, Annapolis, MD</option>
+                    <option value="ga">340 Rent St, Atlanta, GA</option>
+                    <option value="ct">560 Rent St, Harford, CT</option>
+                    <option value="ny">670 Rent St, Albany, NY</option>
+                    <option value="va">780 Rent St, Richmond, VA</option>
+                    <option value="sc">890 Rent St, Columbia, SC</option>
+                    <option value="ri">920 Rent St, Providence, RI</option>
+                    <option value="nc">230 Rent St, Raleigh, NC</option>
+                    <option value="nj">450 Rent St, Trenton, NJ</option>
+                    <option value="nh">660 Rent St, Concord, NH</option>
+                    <option value="ma">8840 Rent St, Boston, MA</option>
+                    <option value="pa">8900 Rent St, Harrisburg, PA</option>
+                    <option value="fl">1230 Rent St, Orlando, FL</option>
+                </select>
+            </div>
+            <fieldset class="pickupdt">
+                <legend>Pick-up Date &amp; Time</legend>
+                <label for="pickupd">Pick-up Date</label>
+                <label for="pickupt">Pick-up Time</label>
+                <div>
+                    <input type="date" name="pickupd" id="pickupd" required>
+                    <select name="pickupt" id="pickupt" required>
+                        <option value="" disabled selected>Select</option>
+                        <option value="eigtham">8:00 AM</option>
+                        <option value="eigththirtyam">8:30 AM</option>
+                        <option value="nineam">9:00 AM</option>
+                        <option value="ninethirtyam">9:30 AM</option>
+                        <option value="tenam">10:00 AM</option>
+                        <option value="tenthirtyam">10:30 AM</option>
+                        <option value="elevenam">11:00 AM</option>
+                        <option value="eleventhirtyam">11:30 AM</option>
+                        <option value="twelveam">12:00 AM</option>
+                        <option value="twelvethirtyam">12:30 AM</option>
+                        <option value="onepm">1:00 PM</option>
+                        <option value="onethirtypm">1:30 PM</option>
+                        <option value="twopm">2:00 PM</option>
+                        <option value="twothirtypm">2:30 PM</option>
+                        <option value="threepm">3:00 PM</option>
+                        <option value="threethirtypm">3:30 PM</option>
+                        <option value="fourpm">4:00 PM</option>
+                        <option value="fourthirtypm">4:30 PM</option>
+                        <option value="fivepm">5:00 PM</option>
+                        <option value="fivethirtypm">5:30 PM</option>
+                        <option value="sixpm">6:00 PM</option>
+                        <option value="sixthirtypm">6:30 PM</option>
+                        <option value="sevenpm">7:00 PM</option>
+                        <option value="seventhirtypm">7:30 PM</option>
+                        <option value="eigthpm">8:00 PM</option>
+                        <option value="eigththirtypm">8:30 PM</option>
+                        <option value="ninepm">9:00 PM</option>
+                        <option value="ninethirtypm">9:30 PM</option>
+                        <option value="tenpm">10:00 PM</option>
+                    </select>
+                </div>
+            </fieldset>
+            <fieldset class="dropoffdt">
+                <legend>Drop-off Date &amp; Time</legend>
+                <label for="dropoffd">Drop-off Date</label>
+                <label for="dropofft">Drop-off Time</label>
+                <div>
+                    <input type="date" name="dropoffd" id="dropoffd" required>
+                    <select name="dropofft" id="dropofft" required>
+                        <option value="" disabled selected>Select</option>
+                        <option value="eigtham">8:00 AM</option>
+                        <option value="eigththirtyam">8:30 AM</option>
+                        <option value="nineam">9:00 AM</option>
+                        <option value="ninethirtyam">9:30 AM</option>
+                        <option value="tenam">10:00 AM</option>
+                        <option value="tenthirtyam">10:30 AM</option>
+                        <option value="elevenam">11:00 AM</option>
+                        <option value="eleventhirtyam">11:30 AM</option>
+                        <option value="twelveam">12:00 AM</option>
+                        <option value="twelvethirtyam">12:30 AM</option>
+                        <option value="onepm">1:00 PM</option>
+                        <option value="onethirtypm">1:30 PM</option>
+                        <option value="twopm">2:00 PM</option>
+                        <option value="twothirtypm">2:30 PM</option>
+                        <option value="threepm">3:00 PM</option>
+                        <option value="threethirtypm">3:30 PM</option>
+                        <option value="fourpm">4:00 PM</option>
+                        <option value="fourthirtypm">4:30 PM</option>
+                        <option value="fivepm">5:00 PM</option>
+                        <option value="fivethirtypm">5:30 PM</option>
+                        <option value="sixpm">6:00 PM</option>
+                        <option value="sixthirtypm">6:30 PM</option>
+                        <option value="sevenpm">7:00 PM</option>
+                        <option value="seventhirtypm">7:30 PM</option>
+                        <option value="eigthpm">8:00 PM</option>
+                        <option value="eigththirtypm">8:30 PM</option>
+                        <option value="ninepm">9:00 PM</option>
+                        <option value="ninethirtypm">9:30 PM</option>
+                        <option value="tenpm">10:00 PM</option>
+                    </select>
+                </div>
+            </fieldset>
+            <div class="cartype">
+                <label for="vehtype">Vehicle Type</label>
+                <select name="vehtype" id="vehtype" required>
+                    <option value="" disabled selected>Please Select</option>
+                    <option value="economy">Economy</option>
+                    <option value="compact">Compact</option>
+                    <option value="standard">Standard</option>
+                    <option value="fullsize">Full-Size</option>
+                    <option value="luxury">Luxury</option>
+                    <option value="elite">Elite</option>
+                </select>
+            </div>
+            <div class="pricerange">
+                <label for="pricerange">Price Range</label>
+                <select name="pricerange" id="pricerange">
+                    <option value=""></option>
+                    <option value="mintwenty">&dollar;20-&dollar;40/day</option>
+                    <option value="minfortyfive">&dollar;45-&dollar;60/day</option>
+                    <option value="minsixtyfive">&dollar;65-&dollar;80/day</option>
+                    <option value="mineightyfive">&dollar;85-&dollar;100/day</option>
+                </select>
+            </div>
+            <div class="seats">
+                <label for="seats">Seats</label>
+                <select name="seats" id="seats">
+                    <option value=""></option>
+                    <option value="two">2</option>
+                    <option value="three">3</option>
+                    <option value="four">4</option>
+                    <option value="five">5</option>
+                </select>
+            </div>
+            <div class="luggage">
+                <label for="luggage">Luggage</label>
+                <select name="luggage" id="luggage">
+                    <option value=""></option>
+                    <option value="one">1</option>
+                    <option value="two">2</option>
+                    <option value="three">3</option>
+                    <option value="four">4</option>
+                    <option value="five">5</option>
+                    <option value="six">6</option>
+                </select>
+            </div>
+            <div class="mileage">
+                <label for="mileage">Mileage</label>
+                <select name="mileage" id="mileage">
+                    <option value=""></option>
+                    <option value="twenty">20/mph</option>
+                    <option value="forty">40/mph</option>
+                    <option value="sixty">60/mph</option>
+                    <option value="eighty">80/mph</option>
+                    <option value="hundred">100/mph</option>
+                    <option value="hundrentwenty">120/mph</option>
+                </select>
+            </div>
+            <button type="submit" id="submit"><img src="styles/imgs/arrow.svg" alt="submit"></button>
+        </form>
+        <div class="carinfo">
+            <div class="carcard">
+                <img src="styles/imgs/economy.png" alt="red economy car.">
+                <h3>Economy</h3>
+                <div class="icons"><img src="styles/imgs/person_icon.svg" alt="seating capacity"><p>4</p><img src="styles/imgs/bag_icon.svg" alt="luggage capacity"><p>2</p>
+                </div>
+                <p class="desc">Economy cars are smaller vehicles that typically seat up to four passengers. Their high fuel economy makes them great for city driving, while their size makes them easy to maneuver through traffic.
+                </p>
+                <a href="404.html" class="linkbtn">View Economy Cars</a>
+            </div>
+            <div class="carcard">
+                <img src="styles/imgs/compact.png" alt="black economy car." class="flip">
+                <h3>Compact</h3>
+                <div class="icons"><img src="styles/imgs/person_icon.svg" alt="seating capacity"><p>5</p><img src="styles/imgs/bag_icon.svg" alt="luggage capacity"><p>2</p>
+                </div>
+                <p class="desc">A compact car is a smaller vehicle, such as a Nissan Versa, that seats up to five people. This type of car is easy to park, plus gets excellent gas mileage due to their compact size and how they’re built
+                </p>
+                <a href="404.html" class="linkbtn">View Compact Cars</a>
+            </div>
+            <div class="carcard">
+                <img src="styles/imgs/standard.png" alt="white economy car.">
+                <h3>Standard</h3>
+                <div class="icons"><img src="styles/imgs/person_icon.svg" alt="seating capacity"><p>5</p><img src="styles/imgs/bag_icon.svg" alt="luggage capacity"><p>4</p>
+                </div>
+                <p class="desc">A standard car rental is a larger sedan, which provides more room for passengers and can fit an additional bag in the trunk compared to an intermediate car. Great car for just above average.</p>
+                <a href="404.html" class="linkbtn">View Standard Cars</a>
+            </div>
+            <div class="carcard">
+                <img src="styles/imgs/full_size.png" alt="orange full-size car.">
+                <h3>Full-Size</h3>
+                <div class="icons"><img src="styles/imgs/person_icon.svg" alt="seating capacity"><p>5</p><img src="styles/imgs/bag_icon.svg" alt="luggage capacity"><p>4</p>
+                </div>
+                <p class="desc">A Full-Size car rental is helpful when needing more passenger room and luggage space than a smaller car offers. They’re great for traveling with extra space and for emergencies when you’re packing.</p>
+                <a href="404.html" class="linkbtn">View Full-Size Cars</a>
+            </div>
+            <div class="carcard">
+                <img src="styles/imgs/luxury.png" alt="green luxury truck.">
+                <h3>Luxury</h3>
+                <div class="icons"><img src="styles/imgs/person_icon.svg" alt="seating capacity"><p>4</p><img src="styles/imgs/bag_icon.svg" alt="luggage capacity"><p>6</p>
+                </div>
+                <p class="desc">Relax on the road with a luxury rental car from Earthly Roads. Luxury car rentals include leather seats, 6-8 cylinder performance and plenty of room for passengers and luggage. Great for luxurious trips.</p>
+                <a href="404.html" class="linkbtn">View Luxury Cars</a>
+            </div>
+            <div class="carcard">
+                <img src="styles/imgs/standard.png" alt="white elite car.">
+                <h3>Elite</h3>
+                <div class="icons"><img src="styles/imgs/person_icon.svg" alt="seating capacity"><p>4</p><img src="styles/imgs/bag_icon.svg" alt="luggage capacity"><p>3</p>
+                </div>
+                <p class="desc">Standard elite vehicles offer sporty driving characteristics and high-end interiors, perfect for car enthusiasts. Even the elite cars can contribute less carbon to our environment and nature.</p>
+                <a href="404.html" class="linkbtn">View Elite Cars</a>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <ul class="linksa">
+            <li><a href="learn.html">Learn</a></li>
+            <li><a href="404.html">Legal</a></li>
+            <li><a href="404.html">Careers</a></li>
+            <li><a href="404.html">Locations</a></li>
+            <li><a href="404.html">Why Us?</a></li>
+            <li><a href="404.html">Help &amp; FAQ</a></li>
+        </ul>
+        <ul class="linksb">
+            <li><a href="404.html">Terms of Use</a></li>
+            <li><a href="404.html">Privacy Policy</a></li>
+            <li><a href="404.html">Cookie Policy</a></li>
+        </ul>
+        <p>&copy;2020 Earthly Roads</p>
+    </footer>
+<!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="styles/js/main.js"></script>
+</body>
+</html>

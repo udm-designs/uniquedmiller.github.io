@@ -1,0 +1,1116 @@
+@use '_resets.scss';
+//Project Name: Project 2
+//Author: Unique Miller
+//Version: 1.0
+//License: License Here
+//Table of Contents in SCSS
+//1. Font Kits
+//2. Variables
+//3. Mixins
+//4. General Styles
+//5. Header & Navigation
+//6. Footer
+//7.Homepage
+//  7a. Homepage Hero
+//  7b. Homepage Section A
+//  7c. Homepage Section B
+//  7d. Homepage Section C
+//8. Learn Page
+//9. Cars Page
+//10. Fees Page
+//11. About Page
+//12. 404 error Page
+//1. Font Kits
+@font-face {
+    font-family: 'nova';
+    src: url('../fonts/fontsnovasquare-regular-webfont.woff2') format('woff2'),
+         url('../fonts/novasquare-regular-webfont.woff') format('woff'),
+         url('../fonts/novasquare-regular-webfont.ttf') format('truetype'),
+         url('../fonts/novasquare-regular-webfont.svg#nova_squarebook') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'rb';
+    src: url('../fonts/roboto-bold-webfont.woff2') format('woff2'),
+         url('../fonts/roboto-bold-webfont.woff') format('woff'),
+         url('../fonts/roboto-bold-webfont.ttf') format('truetype'),
+         url('../fonts/roboto-bold-webfont.svg#robotobold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'rl';
+    src: url('../fonts/roboto-light-webfont.woff2') format('woff2'),
+         url('../fonts/roboto-light-webfont.woff') format('woff'),
+         url('../fonts/roboto-light-webfont.ttf') format('truetype'),
+         url('../fonts/roboto-light-webfont.svg#robotolight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'rm';
+    src: url('../fonts/roboto-medium-webfont.woff2') format('woff2'),
+         url('../fonts/roboto-medium-webfont.woff') format('woff'),
+         url('../fonts/roboto-medium-webfont.ttf') format('truetype'),
+         url('../fonts/roboto-medium-webfont.svg#robotomedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'rr';
+    src: url('../fonts/roboto-regular-webfont.woff2') format('woff2'),
+         url('../fonts/roboto-regular-webfont.woff') format('woff'),
+         url('../fonts/roboto-regular-webfont.ttf') format('truetype'),
+         url('../fonts/roboto-regular-webfont.svg#robotoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+// 2. Variables
+// colors
+$blk: #0d0d0d;
+$grey: #2b2b2b;
+$wht: #fafafa;
+$main: #00620a;
+$acc: #37b5cf;
+$drop: -2px 3px 3px rgba(0, 0, 0, 0.25);
+// fonts
+$light: 'rl', sans-serif;
+$reg: 'rr', sans-serif;
+$med: 'rm', sans-serif;
+$bold: 'rb', sans-serif;
+$head: 'nova', fantasy;
+// spacing and layout
+$gridcol: auto;
+$gridrow: auto;
+$spc: 0 auto;
+$lspc: 0 auto 0 auto;
+$size: 1.125rem;
+$flow: row wrap;
+$contain: 85%;
+// 3. Mixins
+@mixin font($light, $size) {
+    font-family: $light;
+    font-size: $size;
+    font-weight: normal;
+    font-style: normal;
+}
+@mixin marg($spc) {
+    margin: $spc;
+}
+@mixin padd($spc) {
+    padding: $spc;
+}
+@mixin margl($lspc) {
+    margin: $lspc;
+}
+@mixin paddl($lspc) {
+    padding: $lspc;
+}
+@mixin flex($flow) {
+    display: flex;
+    flex-flow: $flow;
+}
+@mixin grid($gridcol, $gridrow) {
+    display: grid;
+    grid-template-columns: $gridcol;
+    grid-template-rows: $gridrow;
+}
+@mixin contain($contain) {
+    width: $contain;
+    margin: 0 auto;
+}
+@mixin imgsize($size) {
+    width: $size;
+    height: $size;
+}
+//media query mixins
+@mixin lap {
+  @media (min-width: 1200px) { @content; }
+}
+@mixin tab {
+  @media (min-width: 763px) { @content; }
+}
+// 4. General Styling
+body {
+    color: $blk;
+    overflow-x: hidden;
+}
+img {
+    @include imgsize($size);
+}
+h1, h2 {
+    @include font($head, 2rem);
+    text-transform: capitalize;
+    color: $main;
+}
+h1 {
+    font-size: 2.125rem;
+    @include tab {
+        font-size: 4rem;
+    }
+}
+h3 {
+    @include font($bold, 1.25rem);
+    text-transform: capitalize;
+}
+p, a, li, label, input, select, legend {
+    @include font($reg, $size);
+}
+strong {
+    font-family: $bold;
+}
+a.linkbtn, a.linkbtn:visited {
+    @include padd(0.5rem 1.25rem);
+    font-family: $head;
+    text-align: center;
+    color: $wht;
+    background-color: $main;
+    border: 3px solid $main;
+    transition: 0.3s ease-in-out;
+    &:hover {
+        color: $main;
+        background-color: transparent;
+    }
+}
+// 5. Header & Navigation
+header {
+    nav {
+        @include flex(row wrap);
+        @include contain($contain);
+        @include padd(1.25rem 0);
+        justify-content: space-between;
+        max-width: 90rem;
+        position: relative;
+        z-index: 2;
+        #logo {
+            img {
+                width: 8rem;
+                height: auto;
+                transition: 0.3s ease-in-out;
+            }
+            &:hover img {
+                filter: invert(21%) sepia(35%) saturate(3635%) hue-rotate(113deg) brightness(98%) contrast(105%);
+            }
+        }
+        #mainnav {
+            @include tab {
+                @include flex(row wrap);
+                align-items: center;
+                position: relative;
+                top: auto;
+                left: auto;
+                text-align: left;
+                width: auto;
+                height: auto;
+                background-color: transparent;
+            }
+            @include flex(column wrap);
+            display: none;
+            justify-content: center;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 5;
+            width: 100vw;
+            height: 100vh;
+            background-color: $acc;
+            li {
+                @include tab {
+                    @include margl(0 2rem 0 0);
+                    width: auto;
+                    &:last-of-type {
+                        margin-right: 0;
+                    }
+                }
+                @include contain($contain);
+                margin-bottom: 1.25rem;
+                a, a:visited {
+                    @include tab {
+                        font-size: 1.375rem;
+                    }
+                    @include font($head, 2rem);
+                    color: $blk;
+                    transition: 0.3s ease-in-out;
+                    &:hover {
+                        color: $main;
+                    }
+                }
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+    #mobopen, #mobclose {
+        @include tab {
+            display: none;
+        }
+        position: relative;
+        width: 3.5rem;
+        height: auto;
+        cursor: pointer;
+        &:hover {
+            filter: invert(21%) sepia(35%) saturate(3635%) hue-rotate(113deg) brightness(98%) contrast(105%);
+        }
+    }
+    #mobclose {
+        display: none;
+        z-index: 10;
+        align-self: flex-end;
+    }
+}
+// 6. Footer
+footer {
+    @include padd(1.75rem 0);
+    background-color: $blk;
+    color: $wht;
+    a, a:visited {
+        font-family: $med;
+        color: $wht;
+        transition: 0.3s ease-in-out;
+        &:hover {
+            color: $acc;
+        }
+    }
+    .linksa, .linksb, p {
+        @include contain($contain);
+    }
+    .linksa {
+        @include tab {
+            @include flex(row wrap);
+            justify-content: center;
+            li {
+                @include margl(0 1.25rem 0 0);
+                &:last-of-type {
+                    margin-right: 0;
+                }
+            }
+        }
+        @include grid(auto auto,auto auto auto);
+        column-gap: 1.25rem;
+        row-gap: 1.25rem;
+        li:nth-child(odd) {
+            text-align: right;
+        }
+    }
+    .linksb {
+        @include tab {
+            @include flex(row wrap);
+            justify-content: center;
+        }
+        @include marg(1.25rem auto);
+        text-align: center;
+        li {
+            @include tab {
+                @include margl(0 1.25rem 0 0);
+                &:last-of-type {
+                    margin-right: 0;
+                }
+            }
+            margin-bottom: 1.25rem;
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+    p {
+        text-align: center;
+    }
+}
+// 7. Homepage
+// 7a. Homepage Hero
+#homepage header {
+    height: 100vh;
+    #homehero {
+        @include lap {
+            clip-path: polygon(0 0, 35% 0, 60% 100%, 0% 100%);
+        }
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        background: url(../imgs/homepage_hero.jpg) no-repeat;
+        background-position: center;
+        background-size: cover;
+        object-fit: cover;
+        clip-path: polygon(0 0, 35% 0, 75% 100%, 0% 100%);
+    }
+    .herocontent {
+        @include tab {
+            @include contain($contain);
+            max-width: 90rem;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        @include lap {
+            width: auto;
+        }
+        position: relative;
+        z-index: 1;
+        .txt {
+            @include tab {
+                @include marg(0 auto);
+                max-width: 32rem;
+            }
+            @include lap {
+                @include marg(10rem auto 0 35%);
+            }
+            @include contain($contain);
+            @include flex(column wrap);
+            p {
+                margin-bottom: 1rem;
+            }
+        }
+        img {
+            @include lap {
+                margin-top: 3.25rem;
+                width: 50rem;
+            }
+            @include contain($contain);
+            margin-top: 6.25rem;
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+    }
+}
+// 7b. Homepage Section A
+#homepage .secta {
+    @include tab {
+        @include contain($contain);
+        @include grid(repeat(2, 50%), auto);
+        @include marg(1.25rem auto 3rem auto);
+        align-items: center;
+        justify-content: space-between;
+        column-gap: 1.25rem;
+    }
+    @include lap {
+        @include grid(31.25rem auto, auto);
+        margin-top: 3rem;
+        max-width: 90rem;
+    }
+    @include marg(3rem 0);
+    .txt {
+        @include tab {
+            @include margl(0 0 0 0);
+            width: 100%;
+            max-width: 31.25rem;
+        }
+        @include contain($contain);
+        @include flex(column wrap);
+        p {
+            margin-bottom: 1rem;
+        }
+    }
+    .imgs {
+        @include tab {
+            width: 100%;
+            height: auto;
+            margin-top: 0;
+        }
+        @include lap {
+            @include grid(auto auto, 100%);
+            column-gap: 1.25rem;
+            align-items: center;
+        }
+        @include flex(row wrap);
+        width: 100vw;
+        margin-top: 1.25rem;
+        img {
+            @include tab {
+                width: 100%;
+                height: 100%;
+                &:last-of-type {
+                    display: none;
+                }
+            }
+            @include lap {
+                width: 100%;
+                height: 85%;
+                &:last-of-type {
+                    display: block;
+                    height: 100%;
+                }
+            }
+            width: 50%;
+            height: auto;
+            object-fit: cover;
+        }
+    }
+}
+// 7c. Homepage Section B
+#homepage .sectb {
+    @include tab {
+        @include contain(65%);
+    }
+    @include lap {
+        @include contain($contain);
+        @include grid(repeat(3, auto), auto auto);
+        column-gap: 1.25rem;
+        max-width: 90rem;
+        grid-template-areas:
+            "head head head"
+            "diva divb divc"
+        ;
+    }
+    margin-bottom: 3rem;
+    h2, h3, p {
+        @include tab {
+            width: 100%;
+        }
+        @include contain($contain);
+        text-align: center;
+    }
+    h3, p {
+        @include lap {
+            max-width: 31.25rem;
+        }
+    }
+    h2 {
+        @include lap {
+            grid-area: head;
+        }
+        margin-bottom: 1.25rem;
+    }
+    p {
+        @include tab {
+            max-width: 31.25rem;
+            padding: 0 1.25rem;
+        }
+    }
+    div {
+        @include lap {
+            grid-area: divb;
+            &:first-of-type {
+                grid-area: diva;
+            }
+            &:last-of-type {
+                grid-area: divc;
+            }
+        }
+        margin-bottom: 1.25rem;
+        .imgbackdrop {
+            height: 20rem;
+            margin-bottom: 0.5rem;
+            background: url(../imgs/homepage_sectb_imga.jpg) no-repeat;
+            background-position: center;
+            background-size: cover;
+            color: $wht;
+            .overlay {
+                @include lap {
+                    opacity: 0;
+                    transition: 0.3s ease-in-out;
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+                height: 100%;
+                background: rgba(0, 98, 10, 0.85);
+                backdrop-filter: blur(2px);
+                display: flex;
+                align-items: center;
+            }
+        }
+        .ibdb {
+            background: url(../imgs/homepage_sectb_imgb.jpg) no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+        .ibdc {
+            background: url(../imgs/homepage_sectb_imgc.jpg) no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+        &:last-of-type:not(.imgbackdrop) {
+            margin-bottom: 0;
+        }
+    }
+}
+// 7d. Homepage Section C
+#homepage .sectc {
+    @include tab {
+        @include grid(60% auto, auto);
+        align-items: center;
+        margin-top: 3rem;
+        height: 25rem;
+    }
+    @include lap {
+        height: auto;
+    }
+    @include flex(column wrap);
+    .txt{
+        @include tab {
+            @include contain($contain);
+            @include margl(0 0 0 1.25rem);
+            order: 2;
+            max-width: 31.25rem;
+        }
+        @include contain($contain);
+        @include flex(column wrap);
+        position: relative;
+        order: 1;
+        z-index: 1;
+        .linkbtn:first-of-type {
+            @include marg(1.25rem 0);
+        }
+    }
+    img {
+        @include tab {
+            order: 1;
+            width: 100%;
+            height: 100%;
+            margin-top: 0;
+        }
+        margin-top: -6.65rem;
+        order: 2;
+        width: 100vw;
+        height: 20rem;
+        object-fit: cover;
+    }
+}
+// 8. Learn Page
+#learnpg {
+    @include tab {
+        height: 100vh;
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100vw;
+        }
+    }
+    @include lap {
+        height: 100%;
+        min-height: 100%;
+        max-width: 100vw;
+        footer {
+            position: relative;
+        }
+    }
+    background: url(../imgs/learn_backdrop.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    .secta {
+        @include tab {
+            max-width: 33.25rem;
+        }
+        @include lap {
+            height: 100vh;
+        }
+        @include contain($contain);
+        background: rgba(247, 247, 247, 0.85);
+        backdrop-filter: blur(2px);
+        margin-bottom: 1.25rem;
+        .contents {
+            @include contain($contain);
+            @include padd(1.25rem 0 3.75rem 0);
+            h1 {
+                margin-bottom: 0.5rem;
+            }
+            p {
+                margin-bottom: 1rem;
+            }
+            a, a:visited {
+                font-family: $med;
+                color: $main;
+            }
+        }
+    }
+}
+// 9. Cars Page
+#carspg {
+    background: url(../imgs/cars_backdrop.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    .secta {
+        @include lap {
+            @include contain($contain);
+            max-width: 90rem;
+            margin-bottom: 1.25rem;
+        }
+        width: 100vw;
+        margin-bottom: 1.25rem;
+        background: rgba(247, 247, 247, 0.85);
+        backdrop-filter: blur(2px);
+        .intro, #rentingarea, .carinfo {
+            @include contain($contain);
+            @include lap {
+                @include marg(0);
+                @include padd(0 3rem);
+                width: auto;
+            }
+        }
+        .intro {
+            @include padd(1.25rem 0);
+            text-align: center;
+            h2 {
+                margin-bottom: 0.25rem
+            }
+        }
+        #quickrent {
+            @include tab {
+                display: none;
+            }
+            @include padd(0.5rem 0);
+            margin-bottom: 3rem;
+            border-bottom: 2px solid $blk;
+            cursor: pointer;
+            .container {
+                @include contain($contain);
+                @include flex(row wrap);
+                justify-content: space-between;
+                h2 {
+                    font-size: 1.25rem;
+                    color: $blk;
+                }
+                img {
+                    width: 1.25rem;
+                    height: auto;
+                }
+            }
+            &:hover {
+                border-color: $acc;
+                h2{
+                    color: $acc;
+                }
+                img {
+                    filter: invert(54%) sepia(87%) saturate(319%) hue-rotate(143deg) brightness(96%) contrast(100%);
+                }
+            }
+        }
+        #rentingarea {
+            @include tab {
+                @include grid(auto, auto);
+                column-gap: 0.5rem;
+                row-gap: 1.25rem;
+                grid-template-areas:
+                    "pickup dropoff cartype"
+                    "pickupdt dropoffdt pricerange"
+                    "seats luggage mileage"
+                    "btn btn btn" 
+                ;
+                .pickup {
+                    grid-area: pickup;
+                }
+                .dropoff {
+                    grid-area: dropoff;
+                }
+                .pickupdt {
+                    grid-area: pickupdt;
+                    align-self: flex-end;
+                }
+                .dropoffdt {
+                    grid-area: dropoffdt;
+                    align-self: flex-end;
+                }
+                .cartype {
+                    grid-area: cartype;
+                }
+                .pricerange {
+                    grid-area: pricerange;
+                }
+                .seats {
+                    grid-area: seats;
+                }
+                .luggage {
+                    grid-area: luggage;
+                }
+                .mileage {
+                    grid-area: mileage;
+                }
+                button#submit {
+                    grid-area: btn;
+                }
+            }
+            @include lap {
+                @include grid(auto, auto);
+                column-gap: 1rem;
+                row-gap: 1.25rem;
+                grid-template-areas:
+                    "pickup dropoff pricerange cartype mileage"
+                    "pickupdt dropoffdt seats luggage btn"
+                ;
+            }
+            @include flex(column wrap);
+            @include marg(1rem auto 3rem auto);
+            display: none;
+            div {
+                @include tab {
+                    margin-bottom: 0;
+                }
+                @include flex(column wrap);
+                margin-bottom: 1rem;
+            }
+            fieldset {
+                border: none;
+                label {
+                    opacity: 0;
+                    position: absolute;
+                    left: -100%;
+                }
+                div {
+                    @include flex(row wrap);
+                    input {
+                        margin-right: 0.5rem;
+                    }
+                }
+            }
+            label {
+                margin-bottom: 0.25rem;
+            }
+            input, select {
+                border: none;
+                background-color: transparent;
+                border-bottom: 2px solid $grey;
+                color: $grey;
+                padding-left: 0.25rem;
+                &:hover {
+                    color: $acc;
+                }
+                &:focus-within {
+                    color: $main;
+                }
+            }
+            button#submit {
+                @include lap {
+                    padding: 0;
+                    width: 3rem;
+                    justify-self: end;
+                }
+                @include padd(0.5rem 2rem);
+                background-color: $main;
+                border: 3px solid $main;
+                cursor: pointer;
+                img {
+                    filter: invert(99%) sepia(4%) saturate(21%) hue-rotate(243deg) brightness(109%) contrast(96%);
+                    width: 1.25rem;
+                    height: auto;
+                }
+                &:hover {
+                    background-color: transparent;
+                    img {
+                        filter: invert(21%) sepia(94%) saturate(1122%) hue-rotate(100deg) brightness(97%) contrast(104%);
+                    }
+                }
+            }
+        }
+        .carinfo {
+            @include tab {
+                @include grid(repeat(2, auto), auto);
+                row-gap: 2rem;
+                column-gap: 2rem;
+                padding-bottom: 3rem;
+            }
+            @include lap {
+                @include grid(repeat(3, auto), auto);
+                row-gap: 2rem;
+                column-gap: 2rem;
+                padding-bottom: 3rem;
+            }
+            @include flex(column wrap);
+            .carcard {
+                @include tab {
+                    margin-bottom: 0;
+                }
+                @include grid(auto auto, auto);
+                margin-bottom: 3rem;
+                grid-template-areas:
+                    "img img"
+                    "head icons"
+                    "para para"
+                    "link link"
+                ;
+                img {
+                    grid-area: img;
+                    width: 100%;
+                    height: auto;
+                }
+                h3 {
+                    grid-area: head;
+                    margin-bottom: 0.25rem
+                }
+                .icons {
+                    @include flex(row wrap);
+                    justify-content: flex-end;
+                    align-items: center;
+                    grid-area: icons;
+                    img {
+                        @include imgsize(1.125rem);
+                        margin-right: 0.25rem;
+                    }
+                    p:not(:last-of-type) {
+                        margin-right: 1rem;
+                    }
+                }
+                .desc {
+                    grid-area: para;
+                    margin-bottom: 1rem;
+                }
+                a, a:visited {
+                    grid-area: link;
+                }
+                .flip {
+                    transform: scaleX(-1);
+                }
+            }
+        }
+    }
+}
+// 10. Fees Page
+#feespg {
+    @include tab {
+        height: 100vh;
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100vw;
+        }
+    }
+    background: url(../imgs/fees_backdrop.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    .secta {
+        @include tab {
+            @include margl(0 auto 0 5rem);
+            max-width: 18rem;
+            height: 90%;
+        }
+        @include lap {
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 20%;
+        }
+        @include contain($contain);
+        background-color: $blk;
+        h1, p{
+            @include padd(0 1.25rem 0 1.25rem);
+            color: $wht;
+        }
+        h1 {
+            padding-top: 1.25rem;
+            margin-bottom: 0.25rem;
+        }
+        p {
+            margin-bottom: 1rem;
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+        img {
+            @include tab {
+                @include margl(-3rem 0 0 4.5rem);
+                width: 35rem;
+            }
+            width: 100%;
+            height: auto;
+            margin-left: 1.5rem;
+        }
+    }
+}
+// 11. About Page
+#aboutpg {
+    header {
+        background: url(../imgs/about_hero.jpg) no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 50vh;
+    }
+    .herotxt {
+        @include tab {
+            max-width: 31.25rem;
+        }
+        @include contain($contain);
+        background: rgba(13, 13, 13, 0.8);
+        backdrop-filter: blur(2px);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        .container {
+            @include padd(1.25rem);
+            color: $wht;
+            text-align: center;
+            h1 {
+                color: $wht;
+            }
+        }
+    }
+    .secta {
+        @include tab {
+            @include grid(60% auto, auto);
+            height: 50rem;
+            grid-template-areas: 
+                "img div"
+                "img div"
+            ;
+            div {
+                @include lap {
+                    max-width: 25rem;
+                }
+                grid-area: div;
+                margin-top: 8rem;
+            }
+        }
+        img {
+            @include tab {
+                grid-area: img;
+                height: 100%;
+            }
+            width: 100%;
+            height: 20rem;
+            object-fit: cover;
+        }
+        p {
+            @include contain($contain);
+            @include marg(1.25rem auto);
+            &:last-of-type {
+                @include marg(0 auto 2rem auto);
+            }
+        }
+    }
+    .sectb {
+        @include tab {
+            @include grid(auto 60%, auto);
+            margin-top: -4rem;
+            height: 50rem;
+            grid-template-areas: 
+                "div img"
+                "div img"
+            ;
+            div {
+                @include lap {
+                    @include margl(0 0 0 auto);
+                    max-width: 25rem;
+                }
+                grid-area: div;
+            }
+        }
+        @include flex(column wrap);
+        div {
+            order: 2;
+        }
+        img {
+            @include tab {
+                grid-area: img;
+                height: 100%;
+            }
+            width: 100%;
+            height: 20rem;
+            object-fit: cover;
+            order: 1;
+        }
+        p {
+            @include tab {
+                text-align: right;
+                margin-top: 8rem;
+            }
+            @include contain($contain);
+            @include marg(1.25rem auto);
+            &:last-of-type {
+                @include marg(0 auto 2rem auto);
+            }
+        }
+    }
+    .sectc {
+        @include tab {
+            @include contain($contain);
+            max-width: 90rem;
+            margin-top: -4rem;
+        }
+        @include lap {
+            @include grid(repeat(2, 50%), 100%);
+            margin-top: -10rem;
+        }
+        div {
+            @include lap {
+                margin-right: 3rem;
+                &:last-of-type {
+                    margin-right: 0;
+                }
+            }
+            @include flex(column wrap);
+            margin-bottom: 3rem;
+            img {
+                width: 100%;
+                height: 22rem;
+                object-fit: cover;
+            }
+            h2, a {
+                @include tab {
+                    width: 100%;
+                }
+                @include contain($contain);
+                text-align: center;
+            }
+            h2 {
+                @include marg(0.75rem auto 0.5rem auto);
+                color: $blk;
+            }
+        }
+    }
+    .sectd {
+        @include tab {
+            height: 20rem;
+        }
+        @include lap {
+            height: 30rem;
+        }
+        background: url(../imgs/about_sectd_img.jpg) no-repeat;
+        background-position: center;
+        background-size: cover;
+        .overlay {
+            @include flex(column wrap);
+            @include padd(3rem 0);
+            height: 100%;
+            width: 100%;
+            background: rgba(13, 13, 13, 0.9);
+            backdrop-filter: blur(2px);
+            justify-content: center;
+            h2, a {
+                @include contain($contain);
+                max-width: 34rem;
+                text-align: center;
+            }
+            h2 {
+                color: $wht;
+                margin-bottom: 1.25rem;
+            }
+        }
+    }
+}
+// 12. 404 error Page
+#error404 {
+    @include tab {
+        height: 100vh;
+    }
+    background: url(../imgs/errorhero.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    div {
+        @include contain($contain);
+        @include padd(1.25rem);
+        @include marg(2rem auto);
+        @include flex(column wrap);
+        background: rgba(13, 13, 13, 0.75);
+        backdrop-filter: blur(2px);
+        h1, a {
+            color: $wht;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 1.25rem;
+        }
+    }
+    footer {
+        @include tab {
+            position: absolute;
+            bottom: 0;
+            width: 100vw;
+        }
+    }
+}

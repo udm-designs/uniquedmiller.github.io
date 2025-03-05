@@ -134,8 +134,7 @@ $contain: 85%;
   @media (max-width: 1280px) and (min-width: 876px) { @content; }
 }
 @mixin mob {
-  @media (max-width: 750px) { @content; }
-//    change to 875px
+  @media (max-width: 875px) { @content; }
 }
 
 // 4. General Styling

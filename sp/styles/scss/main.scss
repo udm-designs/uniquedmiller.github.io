@@ -1,0 +1,1633 @@
+@use '_resets.scss';
+//Project Name: Savoury Palette Portfolio
+//Author: Unique Miller
+//Version: 1.0
+//License: License Here
+//Table of Contents in SCSS
+//1. Font Kits
+//2. Variables
+//3. Mixins
+//4. General Styles
+//5. Homepage, Navigation, & Homepage Intro
+//5a. Header
+//5b. Homepage Intro
+//5c. Navigation
+//6. Footer
+//7. Homepage Section A
+//8. Projects Page Section A
+//9. About Intro
+//10. About Section A
+//11. About Contact Form
+//12. Individual Project Intro / Thai Cauldron
+//13. Individual Project Deliverables Section / Thai Cauldron
+//14. Individual Projects By Name / Thai Cauldron
+//14a. Savant Minimalist
+//14b. Ethan Allen's AP
+//14c. Gloomy Dreadful Food and Film
+//14d. Earthly Roads
+//14e. Dream Weavers Con
+// 1. Font Kits
+@font-face {
+    font-family: 'popl';
+    src: url('../fonts/poppins-light-webfont.woff2') format('woff2'),
+         url('../fonts/poppins-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'popm';
+    src: url('../fonts/poppins-medium-webfont.woff2') format('woff2'),
+         url('../fonts/poppins-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'popr';
+    src: url('../fonts/poppins-regular-webfont.woff2') format('woff2'),
+         url('../fonts/poppins-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'popb';
+    src: url('../fonts/poppins-semibold-webfont.woff2') format('woff2'),
+         url('../fonts/poppins-semibold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'staat';
+    src: url('../fonts/staatliches-regular-webfont.woff2') format('woff2'),
+         url('../fonts/staatliches-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+// 2. Variables
+// colors
+$blk: #0d0d0d;
+$grey: #313131;
+$wht: #fafafa;
+$main: #0d2b59;
+$acc: #e57606;
+$blur: rgba(49, 49, 49, 0.9);
+// fonts
+$light: 'popl', sans-serif;
+$reg: 'popr', sans-serif;
+$med: 'popm', sans-serif;
+$bold: 'popb', sans-serif;
+$head: 'staat', fantasy;
+// spacing and layout
+$gridcol: auto;
+$gridrow: auto;
+$spc: 0 auto;
+$lspc: 0 auto 0 auto;
+$size: 1.125rem;
+$flow: row wrap;
+$contain: 85%;
+// 3. Mixins
+@mixin font($light, $size) {
+    font-family: $light;
+    font-size: $size;
+    font-weight: normal;
+    font-style: normal;
+}
+@mixin marg($spc) {
+    margin: $spc;
+}
+@mixin padd($spc) {
+    padding: $spc;
+}
+@mixin margl($lspc) {
+    margin: $lspc;
+}
+@mixin paddl($lspc) {
+    padding: $lspc;
+}
+@mixin flex($flow) {
+    display: flex;
+    flex-flow: $flow;
+}
+@mixin grid($gridcol, $gridrow) {
+    display: grid;
+    grid-template-columns: $gridcol;
+    grid-template-rows: $gridrow;
+}
+@mixin contain($contain) {
+    width: $contain;
+    margin: 0 auto;
+}
+@mixin imgsize($size) {
+    width: $size;
+    height: $size;
+}
+//media query mixins
+@mixin lapl {
+  @media (min-width: 1600px) { @content; }
+}
+@mixin tab {
+  @media (max-width: 1028px) { @content; }
+}
+@mixin mob {
+  @media (max-width: 550px) { @content; }
+}
+// 4. General Styling
+html {
+    scroll-behavior: smooth;
+}
+img {
+    @include imgsize(1rem);
+}
+h1, h2, h4, label, legend {
+    @include font($head, 3.4375rem);
+    color: $main;
+    letter-spacing: 0.05em;
+    line-height: 3.5rem;
+}
+h3, p, a, li {
+    @include font($light, $size);
+    color: $blk;
+    letter-spacing: 0.05em;
+    line-height: 1.5rem;
+}
+a.linkbtn, a.linkbtn:visited {
+    @include padd(0.5rem 1rem);
+    font-family: $med;
+    border: 3px solid $acc;
+    border-radius: 1.8125rem;
+    color: $acc;
+    text-align: center;
+    width: 100%;
+    transition: all .5s ease;
+    &:hover {
+        background-color: $acc;
+        color: $wht;
+    }
+}
+.socials li a:hover img {
+    filter: invert(54%) sepia(82%) saturate(1586%) hue-rotate(353deg) brightness(88%) contrast(104%);
+}
+// 5. Header, Navigation, & Homepage Intro
+#homepage header { // 5a.Header
+    @include grid(100%, auto 65% auto);
+    @include mob {
+        @include grid(100%, auto);
+        height: auto;
+    }
+    height: 100vh;
+    grid-template-areas:
+        "nav"
+        "intro"
+        "scroll"
+    ;
+    section.homeintro { // 5b.Homepage Intro
+        @include grid(repeat(2, 50%), 100%);
+        @include mob {
+            @include grid(100%, auto);
+            grid-template-areas:
+            "hello"
+            "txt";
+        }
+        grid-area: intro;
+        align-items: center;
+        grid-template-areas:
+            "hello txt"
+        ;
+        div {
+            @include flex(column wrap);
+            justify-content: center;
+            grid-area: txt;
+            .socials, p, .linkbtn, #resumedl {
+                @include mob {
+                    @include marg(0 auto);
+                }
+                @include contain(85%);
+                @include margl(0 auto 1rem 1.25rem);
+                font-size: 1.25rem;
+                line-height: 2rem;
+                max-width: 31rem;
+            }
+            &:first-of-type {
+                @include mob {
+                    height: 10rem;
+                }
+                display: flex;
+                grid-area: hello;
+                height: 25rem;
+                background-color: $main;
+                h1 {
+                    @include contain($contain);
+                    @include tab {
+                        font-size: 3rem;
+                        line-height: 4rem;
+                    }
+                    @include mob {
+                        font-size: 2.5rem;
+                        line-height: 3rem;
+                        text-align: center;
+                    }
+                    color: $wht;
+                    text-align: right;
+                    margin-right: 1.25rem;
+                    font-size: 4rem;
+                    line-height: 5rem;
+                }
+            }
+            .socials {
+                @include mob {
+                    order: 2;
+                }
+                @include flex(row nowrap);
+                justify-content: center;
+                img {
+                    @include imgsize(1.75rem);
+                }
+                li {
+                    margin-right: 2rem;
+                    &:last-of-type {
+                        margin-right: 0;
+                    }
+                }
+            }
+            .linkbtn {
+                @include mob {
+                    @include marg(1rem auto 0.75rem auto);
+                    order: 3;
+                }
+                margin-bottom: 0.5rem;
+            }
+            p {
+                @include mob {
+                    @include marg(1.25rem auto 1rem auto);
+                    order: 1;
+                }
+            }
+            #resumedl {
+                @include mob {
+                    order: 4;
+                }
+                color: $grey;
+                font-size: 1.125rem;
+                text-align: center;
+                text-decoration: underline;
+                margin-bottom: 0;
+                &:hover {
+                    color: $acc;
+                }
+            }
+        }
+    }
+    div.vl {
+        @include mob {
+            display: none;
+        }
+        grid-area: scroll;
+        border-left: 2px solid $main;
+        height: 100%;
+        justify-self: center;
+        p {
+            color: $grey;
+            writing-mode: vertical-rl;
+            text-orientation: sideways;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+        }
+    }
+}
+nav{ // 5c.Navigation
+    @include flex(row nowrap);
+    @include contain($contain);
+    @include marg(1.25rem auto);
+    grid-area: nav;
+    justify-content: space-between;
+    align-items: center;
+    #logo img {
+        @include imgsize(4rem);
+        object-fit: contain;
+        &:hover {
+            filter: invert(54%) sepia(82%) saturate(1586%) hue-rotate(353deg) brightness(88%) contrast(104%);
+        }
+    }
+    .mainnav {
+        @include flex(row nowrap);
+        @include mob {
+            @include contain($contain);
+            display: none;
+            flex-flow: column wrap;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 15;
+            width: 100vw;
+            height: 100vh;
+            background-color: $main;
+            justify-content: center;
+            align-content: center;
+        }
+        li {
+            @include mob {
+                margin-right: 0;
+                margin-bottom: 3rem;
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+            }
+            margin-right: 3.125rem;
+            a, a:visited {
+                @include font($med, 1.25rem);
+                @include mob {
+                    color: $wht;
+                    font-size: 2rem;
+                }
+                text-transform: lowercase;
+                position: relative;
+                &:hover {
+                    color: $acc;
+                }
+                &::before{
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    width: 0;
+                    height: 2px;
+                    background-color: $acc;
+                    transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+                }
+                @media (hover: hover) and (pointer: fine) {
+                    &:hover::before{
+                    left: 0;
+                    right: auto;
+                    width: 100%;
+                    }
+                }
+            }
+            &:last-of-type {
+                margin: 0;
+            }
+        }
+    }
+    #mobopen, #mobclose {
+        @include imgsize(3rem);
+        @include mob {
+            display: block;
+        }
+        display: none;
+        cursor: pointer;
+    }
+    #mobclose {
+        filter: invert(99%) sepia(78%) saturate(30%) hue-rotate(142deg) brightness(122%) contrast(96%);
+        z-index: 16; 
+        display: none;
+    }
+}
+// 6. Footer
+footer {
+    @include grid(50% 50%, auto);
+    @include padd(1.875rem 0);
+    @include mob {
+        @include flex(column wrap);
+        grid-template-areas: none;
+        text-align: center;
+    }
+    grid-template-areas: 
+        "footnav ."
+        "fsocials ."
+        "fdiva fdivb"
+    ;
+    background-color: $main;
+    h4, p, a {
+        color: $wht;
+    }
+    h4 {
+        font-size: 1.875rem;
+        line-height: 2rem;
+    }
+    .footnav {
+        @include contain($contain);
+        @include mob {
+            order: 2;
+        }
+        grid-area: footnav;
+        li {
+            margin-bottom: 0.5rem;
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+            a, a:visited {
+                font-family: $med;
+                text-transform: lowercase;
+                position: relative;
+                &:hover {
+                    color: $acc;
+                }
+                &::before{
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    width: 0;
+                    height: 2px;
+                    background-color: $acc;
+                    transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+                }
+                @media (hover: hover) and (pointer: fine) {
+                    &:hover::before{
+                    left: 0;
+                    right: auto;
+                    width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    .socials {
+        @include contain($contain);
+        @include flex(row nowrap);
+        @include marg(1.25rem auto);
+        @include mob {
+            @include marg(1.5rem auto);
+            justify-content: center;
+            order: 3;
+        }
+        grid-area: fsocials;
+        img {
+            @include imgsize(1.25rem);
+            @include mob {
+                @include imgsize(1.5rem);
+            }
+            filter: invert(100%) sepia(37%) saturate(0%) hue-rotate(4deg) brightness(111%) contrast(96%);
+        }
+        li {
+            margin-right: 2rem;
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+    }
+    div {
+        @include contain($contain);
+        @include mob {
+            order: 1;
+            margin-bottom: 1.5rem;
+        }
+        grid-area: fdiva;
+        align-self: flex-end;
+        a, a:visited {
+            font-family: $med;
+            text-transform: lowercase;
+            position: relative;
+            &:hover {
+                color: $acc;
+            }
+            &::before{
+                content: '';
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 0;
+                height: 2px;
+                background-color: $acc;
+                transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+            }
+            @media (hover: hover) and (pointer: fine) {
+                &:hover::before{
+                left: 0;
+                right: auto;
+                width: 100%;
+                }
+            }
+        }
+        .contactme {
+            font-family: $light;
+        }
+        &:last-of-type {
+            @include mob {
+                text-align: center;
+                order: 4;
+                margin-bottom: 0;
+            }
+            text-align: right;
+            grid-area: fdivb;
+            align-self: flex-end;
+            p {
+                margin-top: 0.5rem;
+            }
+        }
+    }
+}
+// 7. Homepage Section A
+#homepage .secta {
+    margin-top: 2.5rem;
+    h2 {
+        text-align: center;
+        margin-bottom: 2.5rem;
+    }
+    .featproj {
+        @include tab {
+            @include grid(47% auto, auto);
+        }
+        @include mob {
+            @include grid(auto, 12rem auto);
+            height: auto;
+            margin-bottom: 4.25rem;
+            grid-template-areas:
+            "fimg"
+            "ftxt";
+        }
+        @include contain($contain);
+        @include grid(35% auto, auto);
+        height: 20rem;
+        margin-bottom: 6.25rem;
+        grid-template-areas:
+            "ftxt fimg"
+        ;
+        .txt {
+            @include flex(column wrap);
+            grid-area: ftxt;
+            align-self: center;
+            text-align: center;
+            h3 {
+                @include font($bold, 1.875rem);
+                @include mob {
+                    font-size: 1.25rem;
+                    line-height: 1.75rem;
+                    margin-top: 0.5rem;
+                }
+                line-height: 2rem;
+            }
+            p {
+                @include margl(0.5rem auto 1rem auto);
+                @include mob {
+                    @include margl(0.125rem auto 0.5rem auto);
+                }
+            }
+        }
+        .imgs {
+            grid-area: fimg;
+            position: relative;
+            display: flex;
+            align-items: center;
+            img {
+                @include mob {
+                    @include imgsize(100%);
+                }
+                position: absolute;
+                right: 0;
+                width: 85%;
+                height: 100%;
+                object-fit: cover;
+                &:first-of-type {
+                    @include tab {
+                        @include imgsize(16rem);
+                    }
+                    @include mob {
+                        display: none;
+                    }
+                    @include imgsize(18rem);
+                    z-index: 5;
+                    left: 1.25rem;
+                }
+            }
+        }
+    }
+}
+// PROJECTS PAGE
+// 8. Projects Page Section A
+#projectspg {
+    h1 {
+        text-align: center;
+        margin-bottom: 2.5rem;
+    }
+}
+#projs {
+    .proj {
+        @include grid(repeat(2, 50%), auto);
+        @include tab {
+            @include grid(40% 60%, auto);
+        }
+        @include mob {
+            @include grid(auto, 15rem auto);
+            height: auto;
+            margin-bottom: 1.25rem;
+            grid-template-areas:
+            "."
+            "ptxt";
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+        grid-template-areas:
+            ". ptxt"
+        ;
+        width: 100vw;
+        height: 25rem;
+        background: url(../imgs/savantminimalist/milleru_savantminimalist-mockup.jpg) no-repeat;
+        background-position: center;
+        background-size: cover;    
+        .txt {
+            @include flex(column wrap);
+            grid-area: ptxt;
+            justify-content: center;
+            background: rgba(49, 49, 49, 0.9);
+            backdrop-filter: blur(2px);
+            h2, p {
+                color: $wht;
+                @include contain($contain);
+                margin-left: 1.5rem;
+                max-width: 500px;
+            }
+            h2 {
+                @include font($bold, 1.5625rem);
+                @include mob {
+                    margin-top: 1.25rem;
+                }
+                line-height: 2rem;
+            }
+            p.desc {
+                @include marg(0.75rem auto 0.75rem 1.5rem);
+            }
+            p.byline, p.tools {
+                font-family: $reg;
+            }
+            p.tools {
+                margin-bottom: 0.5rem;
+            }
+            .linkbtn {
+                @include contain($contain);
+                @include mob {
+                    margin-bottom: 1.25rem;
+                }
+                max-width: 500px;
+                margin-left: 1.5rem;
+            }
+        }
+        &:nth-of-type(2) {
+            background: url(../imgs/ethanallen/ethanallen_mockup_2.jpg) no-repeat;
+            background-position: center;
+            background-size: cover; 
+        }
+        &:nth-of-type(3) {
+            background: url(../imgs/gloomydreadful/gloomydreadful_mockup_1.jpg) no-repeat;
+            background-position: center;
+            background-size: cover; 
+        }
+        &:nth-of-type(4) {
+            background: url(../imgs/thaicauldron/milleru_the-thai-cauldron_business_card_mockup.jpg) no-repeat;
+            background-position: center;
+            background-size: cover; 
+        }
+        &:nth-of-type(5) {
+            background: url(../imgs/earthlyroads/earthlyroads_mockup_2.jpg) no-repeat;
+            background-position: center;
+            background-size: cover; 
+        }
+        &:nth-of-type(6) {
+            background: url(../imgs/dreamweaverscon/milleru_job3_dreamweavers_bus-shelter_mockup.jpg) no-repeat;
+            background-position: center;
+            background-size: cover; 
+        }
+    }
+}
+// ABOUT PAGE
+//9. About Intro
+#aboutpg {
+    div.iam {
+        @include grid(40% 60%, auto);
+        @include mob {
+            @include flex(column wrap);
+            grid-template-areas: none;
+        }
+        grid-template-areas: 
+            "iam umiller"
+            ". resume"
+        ;
+        h1, h2, a {
+            @include contain($contain);
+            @include margl(0 auto 0 1.25rem);
+            @include mob {
+                @include marg(0 auto);
+                text-align: center;
+            }
+            align-self: center;
+        }
+        div {
+            @include mob {
+                height: 4rem;
+            }
+            display: flex;
+            grid-area: iam;
+            height: 6rem;
+            background-color: $main;
+            h1 {
+                @include margl(0 1.25rem 0 auto);
+                @include mob {
+                    @include margl(0 auto);
+                    text-align: center;
+                    font-size: 2.5rem;
+                }
+                color: $wht;
+                text-align: right;
+            }
+        }
+        h2 {
+            @include mob {
+                font-size: 2.5rem;
+            }
+            grid-area: umiller;
+        }
+        a {
+            @include mob {
+                width: auto;
+            }
+            grid-area: resume;
+            text-transform: uppercase;
+            font-family: $med;
+            color: $grey;
+            width: 20rem;
+            text-align: center;
+            position: relative;
+            &:hover {
+                color: $acc;
+            }
+            &::before{
+                content: '';
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 0;
+                height: 2px;
+                background-color: $acc;
+                transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+            }
+            @media (hover: hover) and (pointer: fine) {
+                &:hover::before{
+                left: 0;
+                right: auto;
+                width: 100%;
+                }
+            }
+        }
+    }
+}
+//10. About Section A
+#aboutpg .secta {
+    @include contain($contain);
+    @include marg(3rem auto);
+    @include flex(column wrap);
+    @include mob {
+        @include marg(2rem auto);
+    }
+    .socials {
+        @include flex(row nowrap);
+        margin-bottom: 1rem;
+        justify-content: center;
+        img {
+            @include imgsize(1.75rem);
+            object-fit: contain;
+        }
+        li {
+            margin-right: 2rem;
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+    }
+    .abtcontain {
+        @include flex(row nowrap);
+        @include mob {
+            @include flex(column wrap);
+        }
+        .abtme {
+            @include tab {
+                @include grid(auto, 12rem auto);
+            }
+            @include mob {
+                @include flex(column wrap);
+                grid-template-areas: none;
+                margin-right: auto;
+                order: 1;
+                width: 100%;
+            }
+            @include grid(auto, 25rem auto);
+            margin-right: 2rem;
+            width: 33%;
+            grid-template-areas: 
+                "abtimg"
+                "abttxt"
+            ;
+            &:first-of-type {
+                @include mob {
+                    order: 3;
+                }
+            }
+            &:last-of-type {
+                @include mob {
+                    order: 2;
+                }
+                margin-right: 0;
+            }
+            img {
+                @include imgsize(100%);
+                object-fit: cover;
+            }
+            div {
+                @include mob {
+                    @include marg(0.75rem auto 1.25rem auto);
+                }
+                grid-area: abttxt;
+                margin-top: 0.75rem;
+                h2 {
+                    font-size: 1.875rem;
+                    line-height: 1.875rem;
+                    margin-bottom: 0.125rem;
+                }
+            }
+        }
+    }
+}
+hr {
+    border-top: 2px solid $main;
+}
+// 11. About Contact Form
+.contactform {
+    @include contain($contain);
+    @include marg(3rem auto);
+    @include flex(column wrap);
+    h2 {
+        text-align: center;
+        margin-bottom: 1.25rem;
+    }
+    form {
+        @include flex(column wrap);
+        align-self: center;
+        max-width: 500px;
+        fieldset {
+            border: none;
+            label {
+                opacity: 0;
+                position: absolute;
+                left: -100px;
+            }
+        }
+        label, legend {
+            font-size: 1.875rem;
+            line-height: 1.875rem;
+            margin-bottom: 0.125rem;
+        }
+        input, textarea {
+            @include paddl(0.5rem 0 0 0.5rem);
+            @include font($reg, 1.125rem);
+            margin-bottom: 1.25rem;
+            background-color: rgba(49, 49, 49, 0.2);
+            border: none;
+            outline: none;
+            border-bottom: 4px solid $main;
+            height: 3rem;
+            transition: all .3s ease;
+            &:focus-within {
+                color: $wht;
+                background-color: $main;
+                &::placeholder {
+                    color: $wht;
+                }
+            }
+            &::placeholder {
+                color: $grey;
+            }
+        }
+        div input {
+            @include mob {
+                margin-right: auto;
+                width: 100%;
+            }
+            margin-right: 1.25rem;
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+        textarea {
+            height: 8rem;
+        }
+        button#submit {
+            @include font($head, 1.5rem);
+            @include padd(0.325rem);
+            outline: none;
+            letter-spacing: 0.1em;
+            background-color: $main;
+            color: $wht;
+            border: 4px solid $main;
+            transition: all .3s ease;
+            &:hover {
+                background-color: transparent;
+                color: $main;
+                cursor: pointer;
+            }
+        }
+    }
+}
+// INDIVIDUAL PROJECT PAGE / Thai Cauldron Centered
+// 12. Individual Project Intro
+.indivprojpg {
+    .intro {
+        @include grid(auto, 20rem auto);
+        @include mob {
+            @include grid(auto, 12rem auto);
+        }
+        grid-area: intro;
+        grid-template-areas:
+            "hero"
+            "container"
+        ;
+        .hero {
+            @include mob {
+                width: 100%;
+            }
+            grid-area: hero;
+            background: url(../imgs/thaicauldron/thaicauldron_hero.jpg) no-repeat;
+            background-position: center;
+            background-size: cover;
+            .overlay {
+                @include grid(auto, auto 85%);
+                @include mob {
+                    @include grid(auto, auto);
+                }
+                background: rgba(49, 49, 49, 0.9);
+                height: 100%;
+                backdrop-filter: blur(2px);
+                grid-template-areas: 
+                    "back"
+                    "hone"
+                ;
+                h1 {
+                    @include mob {
+                        font-size: 2.5rem;
+                        line-height: 3rem;
+                    }
+                    @include contain($contain);
+                    grid-area: hone;
+                    color: $wht;
+                    align-self: center;
+                    text-align: center;
+                }
+                a {
+                    @include contain($contain);
+                    @include font($head, 1.25rem);
+                    grid-area: back;
+                    color: $wht;
+                    letter-spacing: 0.1em;
+                    vertical-align: middle;
+                    margin-top: 1rem;
+                    &:hover {
+                        color: $acc;
+                        img {
+                            filter: invert(54%) sepia(82%) saturate(1586%) hue-rotate(353deg) brightness(88%) contrast(104%);
+                        }
+                    }
+                    img {
+                        @include imgsize(1.25rem);
+                        margin-right: 0.5rem;
+                    }
+                }
+            }
+        }
+        .container {
+            @include tab {
+                @include grid(31.25rem auto, auto);
+                grid-template-areas: 
+                    "herotxt palette"
+                    "logos logos"
+                ;
+            }
+            @include mob {
+                @include flex(column wrap);
+                grid-template-areas: none;
+            }
+            @include contain($contain);
+            @include grid(31.25rem auto auto, 100%);
+            grid-area: container;
+            grid-template-areas: 
+                "herotxt palette logos"
+            ;
+        }
+        .txt {
+            @include flex(column wrap);
+            @include mob {
+                margin-right: auto;
+            }
+            grid-area: herotxt;
+            margin-right: 2rem;
+            .contents {
+                @include marg(1.25rem auto);
+                h3 {
+                    margin-bottom: 0.25rem;
+                }
+                .projectlink {
+                    font-family: $bold;
+                    color: $main;
+                    transition: all .3s ease;
+                    &:hover {
+                        color: $acc;
+                        border-bottom: 2px solid $acc;
+                    }
+                }
+            }
+            .servtools {
+                @include flex(row wrap);
+                @include mob {
+                    justify-content: space-between;
+                }
+                .serv, .tools {
+                    max-width: 50%;
+                    h4 {
+                        @include mob {
+                            text-align: center;
+                        }
+                        margin-bottom: 0.25rem;
+                    }
+                    li {
+                        margin-bottom: 0.25rem;
+                        &:last-of-type {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+                .serv {
+                    margin-right: 1.25rem;
+                    @include mob {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+        .palette {
+            @include tab {
+                margin-bottom: 1.25rem;
+            }
+            @include mob {
+                @include flex(row wrap);
+                margin-top: 1.25rem;
+                height: 15rem;
+            }
+            grid-area: palette;
+            border: 1px solid $blk;
+            div {
+                @include mob {
+                    height: 50%;
+                    width: 50%;
+                }
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 25%;
+                background-color: #050505;
+                p {
+                    color: $wht;
+                }
+                &:nth-of-type(2) {
+                    background-color: #902b00;
+                }
+                &:first-of-type {
+                    background-color: #d0af21;
+                    p {
+                        color: $blk;
+                    }
+                }
+                &:last-of-type {
+                    background-color: #fafafa;
+                    p {
+                        color: $blk;
+                    }
+                }
+            }
+        }
+        .logos {
+            @include tab {
+                @include grid(repeat(2, 50%), auto 2rem);
+                @include marg(1rem 0);
+                grid-template-areas: 
+                    "limga limgb"
+                    "lpa lpb"
+                ;
+                img {
+                    grid-area: limga;
+                    justify-self: center;
+                    &:last-of-type {
+                        grid-area: limgb;
+                    }
+                }
+                p {
+                    grid-area: lpa;
+                    &:last-of-type {
+                        grid-area: lpb;
+                    }
+                }
+            }
+            @include mob {
+                @include flex(column wrap);
+                @include contain($contain);
+                grid-template-areas: none;
+                align-content: center;
+            }
+            @include flex(column wrap);
+            @include margl(0.25rem 0 0 2rem);
+            grid-area: logos;
+            justify-content: center;
+            img {
+                @include tab {
+                    width: 65%;
+                    margin-bottom: 0;
+                }
+                @include mob {
+                    width: 100%;
+                    margin-bottom: 0.75rem;
+                }
+                width: 100%;
+                height: auto;
+                margin-bottom: 0.75rem;
+            }
+            p {
+                @include tab {
+                    margin-bottom: 0;
+                    align-self: flex-end;
+                }
+                @include mob {
+                    align-self: center;
+                    margin-bottom: 1.25rem;
+                }
+                text-align: center;
+                margin-bottom: 1.25rem;
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        h3 {
+            @include font($med, $size);
+            line-height: 1.25rem;
+            color: $blk;
+        }
+        h4 {
+            font-size: 1.25rem;
+            line-height: 1.25rem;
+        }
+    }
+}
+// 13. Individual Project Deliverables Section
+.indivprojpg {
+    .deliverables, .webcomps {
+        @include contain($contain);
+    }
+    .deliverables {
+        @include flex(column wrap);
+        .typography {
+            @include grid(repeat(2, 50%), auto);
+            @include marg(3rem auto);
+            @include mob {
+                @include flex(column wrap);
+                @include marg(3rem auto 1rem auto);
+                grid-template-areas: none;
+            }
+            width: 100%;
+            grid-template-areas:
+                "imga imgb"
+            ;
+            img {
+                grid-area: imga;
+                width: 75%;
+                height: auto;
+                justify-self: center;
+                align-self: center;
+                &:last-of-type {
+                    @include mob {
+                        margin-top: 1.25rem;
+                    }
+                    grid-area: imgb;
+                }
+            }
+        }
+        .mockups {
+            @include flex(row wrap);
+            @include mob {
+                @include flex(column wrap);
+            }
+            width: 100%;
+            img {
+                @include padd(0.5rem);
+                @include mob {
+                    @include padd(0.5rem 0);
+                    width: 100%;
+                    height: 12rem;
+                }
+                width: 50%;
+                height: auto;
+                object-fit: cover;
+            }
+        }
+    }
+    .webcomps {
+        @include marg(3.25rem auto);
+        .deskcomp {
+            @include grid(95% auto, 3rem auto);
+            @include tab {
+                height: 85vh;
+            }
+            @include mob {
+                @include grid(84% auto, 3rem auto);
+                margin-bottom: 2.25rem;
+            }
+            margin-bottom: 3.25rem;
+            height: 90vh;
+            grid-template-areas:
+                "htwo htwo"
+                "dcomphold dvl"
+            ;
+            h2 {
+                grid-area: htwo;
+                justify-self: center;
+            }
+            .compholder {
+                grid-area: dcomphold;
+            }
+            div.vl {
+                grid-area: dvl;
+                justify-self: start;
+                margin-left: 1rem;
+            }
+        }
+        .responsivecomps {
+            @include grid(60% 40%, auto);
+            @include tab {
+                height: 85vh;
+            }
+            @include mob {
+                @include flex(column wrap);
+                height: auto;
+            }
+            height: 90vh;
+            grid-template-areas:
+                "tabcomp mobcomp"
+            ;
+            .tabcomp {
+                @include grid(85% auto, 3rem auto);
+                @include mob {
+                    @include grid(84% auto, 3rem auto);
+                    height: 80vh;
+                    margin-bottom: 2.25rem;
+                }
+                grid-area: tabcomp;
+                height: 100%;
+                overflow-y: hidden;
+                grid-template-areas:
+                    "htwo htwo"
+                    "tcomphold tvl"
+                ;
+                h2 {
+                    grid-area: htwo;
+                    justify-self: center;
+                }
+                .compholder {
+                    grid-area: tcomphold;
+                }
+                div.vl {
+                    grid-area: tvl;
+                }
+            }
+            .mobcomp {
+                @include grid(85% auto, 3rem auto);
+                @include mob {
+                    @include grid(84% auto, 3rem auto);
+                    height: 80vh;
+                    margin-bottom: 2.25rem;
+                    &:last-of-type {
+                        margin-bottom: 0;
+                    }
+                }
+                grid-area: mobcomp;
+                height: 100%;
+                overflow-y: hidden;
+                overflow-x: hidden;
+                grid-template-areas:
+                    "htwo htwo"
+                    "mcomphold mvl"
+                ;
+                h2 {
+                    grid-area: htwo;
+                    justify-self: center;
+                }
+                .compholder {
+                    grid-area: mcomphold;
+                }
+                div.vl {
+                    grid-area: mvl;
+                }
+            }
+            div.vl {
+                justify-self: start;
+                margin-left: 1rem;
+            }
+        }
+        .compholder {
+            height: 100%;
+            border: 1px solid $blk;
+            overflow-y: scroll;
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+        h2 {
+            font-size: 1.25rem;
+            letter-spacing: 0.1em;
+            color: $grey;
+        }
+        div.vl {
+            border-left: 2px solid $main;
+            height: 20rem;
+            justify-self: center;
+            p {
+                color: $grey;
+                writing-mode: vertical-rl;
+                text-orientation: sideways;
+                letter-spacing: 0.35em;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+//14. Individual Projects By Name
+//14a. Savant Minimalist
+#savantminimalistpg {
+    .hero {
+        background: url(../imgs/savantminimalist/savantminimalist_hero.jpg) no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    .palette {
+        div {
+            background-color: #24aec1;
+            p {
+                color: $blk;
+            }
+            &:nth-of-type(2) {
+                background-color: #085c74;
+                p {
+                    color: $wht;
+                }
+            }
+            &:first-of-type {
+                background-color: #f15d22;
+                p {
+                    color: $blk;
+                }
+            }
+            &:last-of-type {
+                background-color: #f47d20;
+                p {
+                    color: $blk;
+                }
+            }
+        }
+    }
+    .deliverables {
+        .typography {
+            @include grid(repeat(3, 33.33%), auto);
+            @include marg(3rem auto);
+            @include mob {
+                @include flex(column wrap);
+                @include marg(3rem auto 1rem auto);
+                grid-template-areas: none;
+            }
+            width: 100%;
+            grid-template-areas:
+                "imga imgb imgc"
+            ;
+            img {
+                grid-area: imga;
+                width: 75%;
+                height: auto;
+                justify-self: center;
+                align-self: center;
+                &:last-of-type {
+                    @include mob {
+                        margin-top: 1.25rem;
+                    }
+                    grid-area: imgc;
+                }
+                &:nth-last-of-type(2){ 
+                    @include mob {
+                        margin-top: 1.25rem;
+                    }
+                    grid-area: imgb;
+                }
+            }
+        }
+        .magazinepdf {
+            @include mob {
+                @include flex(column wrap);
+            }
+            @include marg(3rem 0);
+            @include grid(auto auto, 4rem 42rem);
+            max-width: 90rem;
+            width: 100%;
+            column-gap: 3rem;
+            align-self: center;
+            grid-template-areas:
+                "heada headb"
+                "obja objb"
+            ;
+            object {
+                @include mob {
+                    height: 28rem;
+                    margin-bottom: 2rem;
+                }
+                grid-area: obja;
+                height: 100%;
+                width: 100%;
+                border: 1px solid $blk;
+                &:last-of-type {
+                    @include mob {
+                        margin-bottom: 0;
+                    }
+                    grid-area: objb;
+                }
+            }
+            h2 {
+                @include mob {
+                    margin-bottom: 0.5rem;
+                }
+                grid-area: heada;
+                font-size: 1.75rem;
+                line-height: 2.5rem;
+                color: $grey;
+                text-align: center;
+                &:last-of-type {
+                    grid-area: headb;
+                }
+            }
+        }
+    }
+}
+//14b. Ethan Allen's AP
+#ethanallenpg {
+    .hero {
+        background: url(../imgs/ethanallen/ethanallen_hero.jpg) no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    .container {
+        @include tab {
+            grid-template-areas: 
+                "herotxt palette"
+            ;
+        }
+        @include mob {
+            @include flex(column wrap);
+            grid-template-areas: none;
+        }
+        @include grid(31.25rem auto, 100%);
+        grid-template-areas: 
+            "herotxt palette"
+        ;
+    }
+    .palette {
+        div {
+            @include mob {
+                height: 50%;
+            }
+            height: 33.33%;
+            background-color: #f2f2f2;
+            p {
+                color: $blk;
+            }
+            &:first-of-type {
+                @include mob {
+                    width: 100%;
+                }
+                background-color: #4a6c65;
+                p {
+                    color: $wht;
+                }
+            }
+            &:last-of-type {
+                background-color: #050505;
+                p {
+                    color: $wht;
+                }
+            }
+        }
+    }
+    .deliverables {
+        .typography {
+            img {
+                width: 50%;
+                grid-row: 1/2;
+                grid-column: 1/3;
+            }
+        }
+    }
+}
+//14c. Gloomy Dreadful Food and Film
+#gloomydreadfulpg {
+    .hero {
+        background: url(../imgs/gloomydreadful/gloomy-dreadful_hero.jpg) no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    .palette {
+        div {
+            background-color: #050505;
+            p {
+                color: $wht;
+            }
+            &:nth-of-type(2) {
+                background-color: #c54444;
+                p {
+                    color: $blk;
+                }
+            }
+            &:first-of-type {
+                background-color: #7a1502;
+                p {
+                    color: $wht;
+                }
+            }
+            &:last-of-type {
+                background-color: #fafafa;
+                p {
+                    color: $blk;
+                }
+            }
+        }
+    }
+}
+//14d. Earthly Roads
+#earthlyroadspg {
+    .hero {
+        background: url(../imgs/earthlyroads/earthlyroads_hero.jpg) no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    .palette {
+        div {
+            background-color: #050505;
+            p {
+                color: $wht;
+            }
+            &:nth-of-type(2) {
+                background-color: #37b5cf;
+                p {
+                    color: $blk;
+                }
+            }
+            &:first-of-type {
+                background-color: #00620a;
+                p {
+                    color: $wht;
+                }
+            }
+            &:last-of-type {
+                background-color: #fafafa;
+                p {
+                    color: $blk;
+                }
+            }
+        }
+    }
+}
+//14e. Dream Weavers Con
+#dreamweaverspg {
+    .hero {
+        background: url(../imgs/dreamweaverscon/dreamweaverscon_hero.jpg) no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    .palette {
+        div {
+            background-color: #050505;
+            p {
+                color: $wht;
+            }
+            &:nth-of-type(2) {
+                background-color: #4ac1c4;
+                p {
+                    color: $blk;
+                }
+            }
+            &:first-of-type {
+                background-color: #e50695;
+                p {
+                    color: $wht;
+                }
+            }
+            &:last-of-type {
+                background-color: #fafafa;
+                p {
+                    color: $blk;
+                }
+            }
+        }
+    }
+    .deliverables {
+        margin-bottom: 3rem;
+    }
+}
