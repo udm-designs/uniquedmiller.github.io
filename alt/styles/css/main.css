@@ -88,7 +88,7 @@ body, input, textarea, button {
   font-weight: normal;
   font-style: normal;
 }
-@media (max-width: 750px) {
+@media (max-width: 875px) {
   body, input, textarea, button {
     font-size: 1rem;
   }
@@ -100,7 +100,7 @@ h1, h2, label {
   font-weight: normal;
   font-style: normal;
 }
-@media (max-width: 750px) {
+@media (max-width: 875px) {
   h1, h2, label {
     font-size: 2rem;
   }
@@ -275,13 +275,13 @@ nav .container .logo img {
   -o-object-fit: contain;
      object-fit: contain;
 }
-@media (max-width: 750px) {
+@media (max-width: 875px) {
   nav .container .logo {
     font-size: 2rem;
     max-width: 155px;
   }
 }
-@media (max-width: 750px) {
+@media (max-width: 875px) {
   nav .container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -311,7 +311,7 @@ nav .container .links div {
   display: flex;
   gap: 25px;
 }
-@media (max-width: 750px) {
+@media (max-width: 875px) {
   nav .container .links {
     width: 100%;
   }
@@ -328,7 +328,7 @@ nav a {
   font-style: normal;
   color: #050505;
 }
-@media (max-width: 750px) {
+@media (max-width: 875px) {
   nav a {
     font-size: 1.125rem;
   }
@@ -360,7 +360,7 @@ nav a {
 .hero-content h1 span {
   color: #00C9FF;
 }
-@media (max-width: 750px) {
+@media (max-width: 875px) {
   .hero-content h1 {
     font-size: 2rem;
   }
@@ -446,12 +446,12 @@ nav a {
   color: #FAFAFA;
   background: linear-gradient(135deg, #FFEA00 50%, #ff0055 50%);
 }
-@media (max-width: 750px) {
+@media (max-width: 875px) {
   #scroll .txt {
     height: 9rem;
   }
 }
-@media (max-width: 750px) {
+@media (max-width: 875px) {
   #scroll {
     line-height: 0.25em;
     letter-spacing: 0.25em;
@@ -482,7 +482,7 @@ nav a {
   display: flex;
   gap: 10px;
 }
-@media (max-width: 750px) {
+@media (max-width: 875px) {
   #projects #p-menu ul {
     width: 100%;
     -ms-flex-wrap: wrap;
@@ -549,7 +549,7 @@ nav a {
   -webkit-transform: translateY(50%) rotate(45deg);
           transform: translateY(50%) rotate(45deg);
 }
-@media (max-width: 750px) {
+@media (max-width: 875px) {
   #projects #p-menu li {
     font-size: 0.8rem;
     opacity: 0.6;
@@ -601,7 +601,7 @@ nav a {
   grid-template-columns: 1fr 1fr;
       grid-template-areas: ". cont";
 }
-@media (max-width: 750px) {
+@media (max-width: 875px) {
   #projects .card .container {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
@@ -616,7 +616,7 @@ nav a {
   grid-area: cont;
   padding: 100px 0px 100px 25px;
 }
-@media (max-width: 750px) {
+@media (max-width: 875px) {
   #projects .card .content {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
@@ -625,7 +625,7 @@ nav a {
 #projects .card .content p {
   margin: 10px 0px 20px;
 }
-@media (max-width: 750px) {
+@media (max-width: 875px) {
   #projects .card .content {
     padding: 50px 0px 0px;
   }
@@ -654,7 +654,7 @@ nav a {
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
 }
-@media (max-width: 750px) {
+@media (max-width: 875px) {
   #projects .card .cblock {
     height: 60%;
     width: 100%;
@@ -697,7 +697,7 @@ nav a {
           justify-content: space-between;
   gap: 25px;
 }
-@media (max-width: 750px) {
+@media (max-width: 875px) {
   #about .abt-me {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -809,12 +809,12 @@ nav a {
 #nextsteps .btns a, #nextsteps .btns button {
   height: 11.5em;
 }
-@media (max-width: 750px) {
+@media (max-width: 875px) {
   #nextsteps .btns a, #nextsteps .btns button {
     height: 8em;
   }
 }
-@media (max-width: 750px) {
+@media (max-width: 875px) {
   #nextsteps .btns {
     margin-top: 2.5em;
     gap: 4em;
@@ -827,7 +827,7 @@ nav a {
             align-items: center;
   }
 }
-@media (max-width: 750px) {
+@media (max-width: 875px) {
   #nextsteps {
     padding: 25px 0px;
   }
@@ -876,7 +876,7 @@ form fieldset {
   border: none;
   background-color: #FAFAFA;
 }
-@media (max-width: 750px) {
+@media (max-width: 875px) {
   form fieldset {
     max-width: 90vw;
     height: 95vh;
@@ -906,7 +906,7 @@ form ul li:last-child, form ul li:nth-child(3) {
       -ms-flex: 100%;
           flex: 100%;
 }
-@media (max-width: 750px) {
+@media (max-width: 875px) {
   form ul li {
     -webkit-box-flex: 100%;
         -ms-flex: 100%;
@@ -1139,7 +1139,7 @@ form button:not(button.btn):hover {
   background-color: #ff0055;
   color: #FAFAFA;
 }
-@media (max-width: 750px) {
+@media (max-width: 875px) {
   #resume main .r-links {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1161,7 +1161,7 @@ form button:not(button.btn):hover {
 #resume main #s1 h2, #resume main #s2 h2 {
   margin-bottom: 10px;
 }
-@media (max-width: 750px) {
+@media (max-width: 875px) {
   #resume main #s1, #resume main #s2 {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
@@ -1183,7 +1183,7 @@ form button:not(button.btn):hover {
       flex-wrap: wrap;
   gap: 25px;
 }
-@media (max-width: 750px) {
+@media (max-width: 875px) {
   #resume main #s1 .profic ul {
     display: -ms-grid;
     display: grid;
@@ -1260,7 +1260,7 @@ form button:not(button.btn):hover {
   padding: 10px;
   font-size: 1rem;
 }
-@media (max-width: 750px) {
+@media (max-width: 875px) {
   #resume main #s2 {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
@@ -1310,7 +1310,7 @@ form button:not(button.btn):hover {
   font-size: 4rem;
   padding-bottom: 10px;
 }
-@media (max-width: 750px) {
+@media (max-width: 875px) {
   #pa-process header .process-hero h1 {
     font-size: 3.5rem;
   }
@@ -1383,7 +1383,7 @@ form button:not(button.btn):hover {
       -ms-flex: 1;
           flex: 1;
 }
-@media (max-width: 750px) {
+@media (max-width: 875px) {
   #pa-process main .sbs .c1, #pa-process main .sbs .c2 {
     -webkit-box-flex: 100%;
         -ms-flex: 100%;
@@ -1406,7 +1406,7 @@ form button:not(button.btn):hover {
       -ms-flex: 1;
           flex: 1;
 }
-@media (max-width: 750px) {
+@media (max-width: 875px) {
   #pa-process main .gal img {
     min-width: 200px;
   }
