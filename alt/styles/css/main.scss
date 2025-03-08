@@ -1061,19 +1061,46 @@ form {
                 flex: 100%;
             }
         }
+        .c1 {
+            overflow-x: hidden;
+        }
     }
     .gal {
         display: flex;
         flex-wrap: wrap;
         gap: 40px;
-        img {
+        .wci-container {
             width: 0px;
-            min-width: 350px;
-            height: 400px;
+            min-width: 320px;
+            // flex: 1;
+            overflow-y: scroll;
+            @include mob {
+                min-width: 100%;
+            }
+            img {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+        }
+        > img {
+            width: 0px;
+            min-width: 320px;
+            height: 568px;
             flex: 1;
+            overflow-y: scroll;
             @include mob {
                 min-width: 200px;
             }
+        }
+    }
+    .gal.slider {
+        overflow-x: scroll;
+        width: 100%;
+        height: 568px;
+        flex-wrap: nowrap;
+        @include mob {
+            height: min-content;
         }
     }
 }
