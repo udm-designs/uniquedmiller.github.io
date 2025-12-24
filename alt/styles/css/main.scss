@@ -897,13 +897,12 @@ form {
         .profic {
             padding: 25px;
             ul {
-                display: flex;
-                flex-wrap: wrap;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                text-align: center;
                 gap: 25px;
                 @include mob {
-                    display: grid;
                     grid-template-columns: 1fr 1fr;
-                    text-align: center;
                 }
             }
             li img {
