@@ -74,6 +74,7 @@ $wht: #FAFAFA;
 $main: #ff0055;
 $sec: #FFEA00;
 $acc: #00C9FF;
+$trans: #0000;
 $blur: rgba(49, 49, 49, 0.9);
 // font variables
 $light: 'pl', sans-serif;
@@ -201,6 +202,24 @@ input, textarea {
             top: 30%;
             padding: 10px 0px;
         }
+    }
+    &.alt:not(.contactbtn) {
+        background-color: $trans;
+        color: $main;
+        &:hover {
+            color: $wht;
+            &::after {
+                bottom: 35%;
+            }
+            &::before {
+                top: 35%;
+            }
+        }
+        &::after, &::before {
+            content:'';
+            height: 5px;
+        }
+        
     }
 }
 .diamond {
@@ -331,8 +350,13 @@ nav a {
         color: $blk;
         font-size: 3rem;
         text-align: center;
+        line-height: 2rem;
         span {
             color: $acc;
+        }
+        span.prof {
+            color: $grey;
+            font-size: 1rem;
         }
         @include mob {
             font-size: 2rem;
@@ -349,16 +373,20 @@ nav a {
     }
 }
 #scroll {
-    @include font($light, 1rem);
+    @include font($reg, 1rem);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    line-height: 0.5em;
-    letter-spacing: 0.5em;
+    line-height: 0.25em;
+    letter-spacing: 0.25em;
     position: relative;
     z-index: 1;
     overflow: hidden;
+    color: $blk;
+    &:visited {
+        color: $blk;
+    }
     .diamond {
         position: absolute;
         background: linear-gradient(135deg, $sec 50%, $sec 50%);
@@ -396,8 +424,8 @@ nav a {
         }
     }
     @include mob {
-        line-height: 0.25em;
-        letter-spacing: 0.25em;
+        line-height: 0.125em;
+        letter-spacing: 0.125em;
     }
 } 
 
